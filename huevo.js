@@ -1,7 +1,7 @@
 
 var puntos = [];
-for ( var i = 0; i < 100; i ++ ) {
-    puntos.push( new THREE.Vector2(Math.sqrt(i*i/(100*100*Math.sqrt(i/100))-i*i/(100*100))*15,( i - 5 ) * 2 ));
+for ( var i = 0; i < 25; i ++ ) {
+    puntos.push( new THREE.Vector2(Math.sqrt(5*i*i/Math.sqrt(i)-i*i),( i - 5 ) * 2 ));
 }
 var forma = new THREE.LatheGeometry(puntos);
 var material = new THREE.MeshNormalMaterial();
