@@ -6,7 +6,7 @@ for ( var i = 0; i < 50; i ++ ) {
 var forma = new THREE.LatheGeometry(puntos);
 var material = new THREE.MeshNormalMaterial();
 var malla = new THREE.Mesh( forma, material );
-malla.rotateX( Math.PI/6 );
+malla.rotateX( Math.PI );
 var escena = new THREE.Scene();
 escena.add(malla);
 
