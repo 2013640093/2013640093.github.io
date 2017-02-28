@@ -2,7 +2,7 @@
 var puntos = [];
 for ( var i = 0; i < 100;  i++ ) {
     
-    puntos.push( new THREE.Vector2(Math.sqrt(10*i*i/Math.sqrt(i)-i*i),i));
+    //puntos.push( new THREE.Vector2(Math.sqrt(10*i*i/Math.sqrt(i)-i*i),i));
     puntos.push( new THREE.Vector3(Math.sqrt(10*(i)*(i)/Math.sqrt(i)-i*i),-i));
 }
 var forma = new THREE.LatheGeometry(puntos);
