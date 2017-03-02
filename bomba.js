@@ -12,22 +12,22 @@ var base = new THREE.CylinderGeometry( 2, 2, 4, 32 );
 base.translate(0,10,0);
 
 var figura = new THREE.Shape();
-figura.moveTo(6, -6);
-figura.lineTo(6.5, -6);
-figura.lineTo(6.5, -6.2);
-figura.lineTo(6, -6.2);
-figura.lineTo(6, -6);
+figura.moveTo(7, -6);
+figura.lineTo(7.3, -6);
+figura.lineTo(7.3, -6.1);
+figura.lineTo(7, -6.1);
+figura.lineTo(7, -6);
 var pied = new THREE.ExtrudeGeometry( figura,
-                                       {amount: 5} );
+                                       {amount: 3} );
 
 var figura2 = new THREE.Shape();
-figura2.moveTo(-6, -6);
-figura2.lineTo(-6.5, -6);
-figura2.lineTo(-6.5, -6.2);
-figura2.lineTo(-6, -6.2);
-figura2.lineTo(-6, -6);
+figura2.moveTo(-7, -6);
+figura2.lineTo(-7.3, -6);
+figura2.lineTo(-7.3, -6.1);
+figura2.lineTo(-7, -6.1);
+figura2.lineTo(-7, -6);
 var piei = new THREE.ExtrudeGeometry( figura2,
-                                       {amount: 5} );
+                                       {amount: 3} );
 var material = new THREE.MeshNormalMaterial();
 //var material = new THREE.MeshBasicMaterial( {color: 0xfff99} );
 //var material2 = new THREE.MeshBasicMaterial( {color: 0xfff00} );
