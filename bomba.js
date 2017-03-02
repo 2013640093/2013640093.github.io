@@ -46,7 +46,7 @@ bomba.merge(mallojod.geometry, mallojod.matrix);
 bomba.merge(mallamecha.geometry, mallamecha.matrix);
 bomba.merge(mallabase.geometry, mallabase.matrix);
 bomba.merge( mallapied.geometry,  mallapied.matrix);
-bomba.merge( mallapied.geometry,  mallapied.matrix);
+bomba.merge( mallapiei.geometry,  mallapiei.matrix);
 
 var mallabomba = new THREE.Mesh(bomba, material);
 
