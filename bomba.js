@@ -26,8 +26,6 @@ figura2.lineTo(-2, -3);
 var piei = new THREE.ExtrudeGeometry( figura2,
                                        {amount: 5} );
 
-
-
 var material = new THREE.MeshBasicMaterial( {color: 0xfff99} );
 var material2 = new THREE.MeshBasicMaterial( {color: 0xfff00} );
 
@@ -49,7 +47,6 @@ bomba.merge( mallapied.geometry,  mallapied.matrix);
 bomba.merge( mallapiei.geometry,  mallapiei.matrix);
 
 var mallabomba = new THREE.Mesh(bomba, material);
-
 
 var escena = new THREE.Scene();
 escena.add(mallabomba);
