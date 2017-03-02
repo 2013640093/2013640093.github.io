@@ -1,7 +1,10 @@
-var cuerpo = new THREE.SphereBufferGeometry(10,64,64);
-var ojoi=new THREE.SphereBufferGeometry(10,32,32);
+//var cuerpo = new THREE.SphereBufferGeometry(10,64,64);
+var cuerpo = new THREE.SphereGeometry(10,64,64);
+//var ojoi=new THREE.SphereBufferGeometry(10,32,32);
+var ojoi=new THREE.SphereGeometry(10,32,32);
 //ojoi.translate(-2,2,5);
-var ojod=new THREE.SphereBufferGeometry(10,32,32);
+//var ojod=new THREE.SphereBufferGeometry(10,32,32);
+var ojod=new THREE.SphereGeometry(10,32,32);
 //ojod.translate(2,2,5);
 var mecha = new THREE.CylinderGeometry( 1, 1, 25, 32 );
 //mecha.translate(0,14,0);
