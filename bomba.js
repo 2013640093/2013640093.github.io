@@ -41,7 +41,7 @@ var mallapied =new THREE.Mesh( pied, material);
 var mallapiei =new THREE.Mesh( piei, material);
 
 var bomba = new THREE.Geometry();
-//bomba.merge(mallacuerpo.geometry, mallacuerpo.matrix);
+bomba.merge(mallacuerpo.geometry, mallacuerpo.matrix);
 //bomba.merge(mallojoi.geometry, mallojoi.matrix);
 //bomba.merge(mallojod.geometry, mallojod.matrix);
 bomba.merge(mallamecha.geometry, mallamecha.matrix);
