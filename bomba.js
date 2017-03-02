@@ -18,7 +18,7 @@ figura.lineTo(7.3, -6.1);
 figura.lineTo(7, -6.1);
 figura.lineTo(7, -6);
 var pied = new THREE.ExtrudeGeometry( figura,
-                                       {amount: 3} );
+                                       {amount: 2} );
 
 var figura2 = new THREE.Shape();
 figura2.moveTo(-7, -6);
@@ -27,7 +27,7 @@ figura2.lineTo(-7.3, -6.1);
 figura2.lineTo(-7, -6.1);
 figura2.lineTo(-7, -6);
 var piei = new THREE.ExtrudeGeometry( figura2,
-                                       {amount: 3} );
+                                       {amount: 2} );
 var material = new THREE.MeshNormalMaterial();
 //var material = new THREE.MeshBasicMaterial( {color: 0xfff99} );
 //var material2 = new THREE.MeshBasicMaterial( {color: 0xfff00} );
