@@ -1,12 +1,12 @@
 var cuerpo = new THREE.SphereBufferGeometry(10,64,64);
 var ojoi=new THREE.SphereBufferGeometry(10,32,32);
-ojoi.translate(-2,2,5);
+//ojoi.translate(-2,2,5);
 var ojod=new THREE.SphereBufferGeometry(10,32,32);
-ojod.translate(2,2,5);
+//ojod.translate(2,2,5);
 var mecha = new THREE.CylinderGeometry( 1, 1, 25, 32 );
-mecha.translate(0,14,0);
+//mecha.translate(0,14,0);
 var base = new THREE.CylinderGeometry( 2, 2, 4, 32 );
-base.translate(0,14,0);
+//base.translate(0,14,0);
 
 var figura = new THREE.Shape();
 figura.moveTo(2, -3);
