@@ -2,32 +2,32 @@
 var cuerpo = new THREE.SphereGeometry(10,64,64);
 //var ojoi=new THREE.SphereBufferGeometry(10,32,32);
 var ojoi=new THREE.SphereGeometry(2,32,32);
-ojoi.translate(-2,2,5);
+ojoi.translate(-2,2,8);
 //var ojod=new THREE.SphereBufferGeometry(10,32,32);
 var ojod=new THREE.SphereGeometry(2,32,32);
-ojod.translate(2,2,5);
-var mecha = new THREE.CylinderGeometry( 1, 1, 25, 32 );
-mecha.translate(0,14,0);
+ojod.translate(2,2,8);
+var mecha = new THREE.CylinderGeometry( 1, 1, 15, 32 );
+mecha.translate(0,10,0);
 var base = new THREE.CylinderGeometry( 2, 2, 4, 32 );
-base.translate(0,14,0);
+base.translate(0,10,0);
 
 var figura = new THREE.Shape();
-figura.moveTo(2, -3);
-figura.lineTo(5, -3);
+figura.moveTo(2, -4);
+figura.lineTo(5, -4);
 figura.lineTo(5, -5);
 figura.lineTo(2, -5);
-figura.lineTo(2, -3);
+figura.lineTo(2, -4);
 var pied = new THREE.ExtrudeGeometry( figura,
-                                       {amount: 8} );
+                                       {amount: 5} );
 
 var figura2 = new THREE.Shape();
-figura2.moveTo(-2, -3);
-figura2.lineTo(-5, -3);
+figura2.moveTo(-2, -4);
+figura2.lineTo(-5, -4);
 figura2.lineTo(-5, -5);
 figura2.lineTo(-2, -5);
-figura2.lineTo(-2, -3);
+figura2.lineTo(-2, -4);
 var piei = new THREE.ExtrudeGeometry( figura2,
-                                       {amount: 8} );
+                                       {amount: 5} );
 var material = new THREE.MeshNormalMaterial();
 //var material = new THREE.MeshBasicMaterial( {color: 0xfff99} );
 //var material2 = new THREE.MeshBasicMaterial( {color: 0xfff00} );
