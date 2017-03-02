@@ -6,26 +6,26 @@ ojoi.translate(-2,2,8);
 //var ojod=new THREE.SphereBufferGeometry(10,32,32);
 var ojod=new THREE.SphereGeometry(2,32,32);
 ojod.translate(2,2,8);
-var mecha = new THREE.CylinderGeometry( 1, 1, 15, 32 );
+var mecha = new THREE.CylinderGeometry( 1, 1, 8, 32 );
 mecha.translate(0,10,0);
 var base = new THREE.CylinderGeometry( 2, 2, 4, 32 );
 base.translate(0,10,0);
 
 var figura = new THREE.Shape();
-figura.moveTo(2, -4);
-figura.lineTo(5, -4);
+figura.moveTo(3, -5);
 figura.lineTo(5, -5);
+figura.lineTo(5, -6);
+figura.lineTo(2, -6);
 figura.lineTo(2, -5);
-figura.lineTo(2, -4);
 var pied = new THREE.ExtrudeGeometry( figura,
                                        {amount: 5} );
 
 var figura2 = new THREE.Shape();
-figura2.moveTo(-2, -4);
-figura2.lineTo(-5, -4);
+figura2.moveTo(-3, -5);
 figura2.lineTo(-5, -5);
-figura2.lineTo(-2, -5);
-figura2.lineTo(-2, -4);
+figura2.lineTo(-5, -6);
+figura2.lineTo(-3, -6);
+figura2.lineTo(-3, -5);
 var piei = new THREE.ExtrudeGeometry( figura2,
                                        {amount: 5} );
 var material = new THREE.MeshNormalMaterial();
