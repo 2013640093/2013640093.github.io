@@ -9,8 +9,8 @@ for ( var i = 0; i < 100;  i++ ) {
 }
 //var color = new THREE.Color("rgb(245,245,220)");
 var forma = new THREE.LatheGeometry(puntos);
-var material = new THREE.MeshNormalMaterial();
-//var material= new TREE.MeshBasicmATERIAL({color: FFFF99});
+//var material = new THREE.MeshNormalMaterial();
+var material= new TREE.MeshBasicmATERIAL({color: FFFF99});
 
 var malla = new THREE.Mesh( forma, material);
 
