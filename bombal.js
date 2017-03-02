@@ -1,4 +1,4 @@
-var cuerpo= new TREE.SphereGeometry(5,64,64);
+var cuerpo= = new THREE.SphereGeometry( 5, 32, 32 );
 var material = new THREE.MeshBasicMaterial( {color: 0x40000} );
 var mallacuerpo =new THREE.Mesh( cuerpo, material);
 
