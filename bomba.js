@@ -12,20 +12,20 @@ var base = new THREE.CylinderGeometry( 2, 2, 4, 32 );
 base.translate(0,10,0);
 
 var figura = new THREE.Shape();
-figura.moveTo(4, -6);
-figura.lineTo(5, -6);
-figura.lineTo(5, -6.5);
-figura.lineTo(4, -6.5);
-figura.lineTo(4, -6);
+figura.moveTo(6, -6);
+figura.lineTo(6.5, -6);
+figura.lineTo(6.5, -6.2);
+figura.lineTo(6, -6.2);
+figura.lineTo(6, -6);
 var pied = new THREE.ExtrudeGeometry( figura,
                                        {amount: 5} );
 
 var figura2 = new THREE.Shape();
-figura2.moveTo(-4, -6);
-figura2.lineTo(-5, -6);
-figura2.lineTo(-5, -6.5);
-figura2.lineTo(-4, -6.5);
-figura2.lineTo(-4, -6);
+figura2.moveTo(-6, -6);
+figura2.lineTo(-6.5, -6);
+figura2.lineTo(-6.5, -6.2);
+figura2.lineTo(-6, -6.2);
+figura2.lineTo(-6, -6);
 var piei = new THREE.ExtrudeGeometry( figura2,
                                        {amount: 5} );
 var material = new THREE.MeshNormalMaterial();
