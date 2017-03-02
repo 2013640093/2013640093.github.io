@@ -50,7 +50,7 @@ bomba.merge( mallapied.geometry,  mallapied.matrix);
 bomba.merge( mallapiei.geometry,  mallapiei.matrix);
 
 var mallabomba = new THREE.Mesh(bomba, material);
-mallabomba.rotateY( Math.PI/4 );
+//mallabomba.rotateY( Math.PI/4 );
 var escena = new THREE.Scene();
 escena.add(mallabomba);
 
