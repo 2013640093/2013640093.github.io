@@ -28,8 +28,8 @@ figura2.lineTo(-2, -5);
 figura2.lineTo(-2, -3);
 var piei = new THREE.ExtrudeGeometry( figura2,
                                        {amount: 5} );
-
-var material = new THREE.MeshBasicMaterial( {color: 0xfff99} );
+var material = new THREE.MeshNormalMaterial();
+//var material = new THREE.MeshBasicMaterial( {color: 0xfff99} );
 //var material2 = new THREE.MeshBasicMaterial( {color: 0xfff00} );
 
 var mallacuerpo =new THREE.Mesh( cuerpo, material);
