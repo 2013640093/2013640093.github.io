@@ -1,4 +1,4 @@
-var cuerpo= = new THREE.SphereBufferGeometry(5);
+var cuerpo = new THREE.SphereBufferGeometry(5,64,64);
 var material = new THREE.MeshBasicMaterial( {color: 0x40000} );
 var mallacuerpo =new THREE.Mesh( cuerpo, material);
 
