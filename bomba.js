@@ -42,12 +42,12 @@ var mallapiei =new THREE.Mesh( piei, material);
 
 var bomba = new THREE.Geometry();
 bomba.merge(mallacuerpo.geometry, mallacuerpo.matrix);
-//bomba.merge(mallojoi.geometry, mallojoi.matrix);
-//bomba.merge(mallojod.geometry, mallojod.matrix);
+bomba.merge(mallojoi.geometry, mallojoi.matrix);
+bomba.merge(mallojod.geometry, mallojod.matrix);
 bomba.merge(mallamecha.geometry, mallamecha.matrix);
-//bomba.merge(mallabase.geometry, mallabase.matrix);
-//bomba.merge( mallapied.geometry,  mallapied.matrix);
-//bomba.merge( mallapiei.geometry,  mallapiei.matrix);
+bomba.merge(mallabase.geometry, mallabase.matrix);
+bomba.merge( mallapied.geometry,  mallapied.matrix);
+bomba.merge( mallapiei.geometry,  mallapiei.matrix);
 
 var mallabomba = new THREE.Mesh(bomba, material);
 
