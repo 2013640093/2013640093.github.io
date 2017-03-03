@@ -1,6 +1,6 @@
 
 var puntos = [];
-for ( var i = 0; i < 50;  i++ ) {
+for ( var i = 0; i < 100;  i++ ) {
     
     puntos.push( new THREE.Vector2(Math.sqrt(10*i*i/Math.sqrt(i)-i*i),i));
     //Modificar el signo de z, voltea la el ovalo en y
