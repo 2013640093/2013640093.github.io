@@ -289,15 +289,28 @@ forma.faces.push( new THREE.Face3(	119	,	120	,	118	) ); // Cara	163
 
 forma.computeBoundingSphere();
 forma.computeFaceNormals();
-
-
 var material = new THREE.MeshNormalMaterial();
 
-var malla = new THREE.Mesh( forma, material );
-malla.rotateX(Math.PI/4);
-malla.rotateY(Math.PI*2/3);
+
+var ojoi=new THREE.SphereGeometry(1,32,32);
+ojoi.translate(2,11.5,2);
+var ojod=new THREE.SphereGeometry(1,32,32);
+ojod.translate(5,11.5,2);
+
+var mallacuerpo = new THREE.Mesh( forma, material );
+var mallojoi =new THREE.Mesh( ojoi, material);
+var mallojod =new THREE.Mesh( ojod, material);
+
+var zorro = new THREE.Geometry();
+bomba.merge(mallacuerpo.geometry, mallacuerpo.matrix);
+bomba.merge(mallojoi.geometry, mallojoi.matrix);
+bomba.merge(mallojod.geometry, mallojod.matrix);
+
+var mallazorro = new THREE.Mesh(zorro, material);
+mallazorro.rotateX(Math.PI/4);
+mallazorro.rotateY(Math.PI*2/3);
 var escena = new THREE.Scene();
-escena.add( malla );
+escena.add( mallazorro );
 
 var camara = new THREE.PerspectiveCamera();
 camara.position.z = 50;
