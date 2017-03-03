@@ -2,7 +2,7 @@
 var puntos = [];
 for ( var i = 0; i < 50;  i++ ) {
     
-    puntos.push( new THREE.Vector2(Math.sqrt(5*i*i/Math.sqrt(i)-i*i),i));
+    puntos.push( new THREE.Vector2(Math.sqrt(10*i*i/Math.sqrt(i)-i*i),i));
     //Modificar el signo de z, voltea la el ovalo en y
     //puntos.push( new THREE.Vector3(Math.sqrt(10*(i)*(i)/Math.sqrt(i)-i*i),-i));
     //puntos.push( new THREE.Vector3(i,Math.sqrt(10*(i)*(i)/Math.sqrt(i)-i*i)));
@@ -21,7 +21,7 @@ escena.add(malla);
 
 
 var camara = new THREE.PerspectiveCamera();
-camara.position.z = 500;
+camara.position.z = 100;
 
 var renderizador = new THREE.WebGLRenderer();
 renderizador.setSize( window.innerHeight*.95, window.innerHeight*.95 );
