@@ -302,9 +302,9 @@ var mallojoi =new THREE.Mesh( ojoi, material);
 var mallojod =new THREE.Mesh( ojod, material);
 
 var zorro = new THREE.Geometry();
-bomba.merge(mallacuerpo.geometry, mallacuerpo.matrix);
-bomba.merge(mallojoi.geometry, mallojoi.matrix);
-bomba.merge(mallojod.geometry, mallojod.matrix);
+zorro.merge(mallacuerpo.geometry, mallacuerpo.matrix);
+zorro.merge(mallojoi.geometry, mallojoi.matrix);
+zorro.merge(mallojod.geometry, mallojod.matrix);
 
 var mallazorro = new THREE.Mesh(zorro, material);
 mallazorro.rotateX(Math.PI/4);
