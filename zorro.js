@@ -292,9 +292,9 @@ forma.computeFaceNormals();
 var material = new THREE.MeshNormalMaterial();
 
 
-var ojoi=new THREE.SphereGeometry(1,32,32);
+var ojoi=new THREE.SphereGeometry(.2,32,32);
 ojoi.translate(2,11.5,2);
-var ojod=new THREE.SphereGeometry(1,32,32);
+var ojod=new THREE.SphereGeometry(.2,32,32);
 ojod.translate(5,11.5,2);
 
 var mallacuerpo = new THREE.Mesh( forma, material );
