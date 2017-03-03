@@ -308,7 +308,7 @@ zorro.merge(mallojod.geometry, mallojod.matrix);
 
 var mallazorro = new THREE.Mesh(zorro, material);
 //mallazorro.rotateX(Math.PI/4);
-//mallazorro.rotateY(Math.PI*2/3);
+mallazorro.rotateY(Math.PI*2/3);
 mallazorro.rotateY(Math.PI/2);
 var escena = new THREE.Scene();
 escena.add( mallazorro );
