@@ -6,15 +6,17 @@ var escena = new THREE.Scene();
         var cuboForma=  new THREE.BoxGeometry(10,5,10);
         cuboForma.translate(-35+i*10,0,35-j*10);
         if(color%2!==0){
-          var material = new THREE.MeshBasicMaterial({color: 0xcccccc});
+          //var material = new THREE.MeshBasicMaterial({color: 0xcccccc});
+         var material = new THREE.MeshBasicMaterial({color: 0xcc0000});
         }else{
-          var material = new THREE.MeshBasicMaterial({color: 0x555555});
+          //var material = new THREE.MeshBasicMaterial({color: 0x555555});
+         var material = new THREE.MeshBasicMaterial({color: 0x004c99});
         }
         var cuboMalla = new THREE.Mesh(cuboForma,material);
         color=color+1;
           cuboMalla.receiveShadow=true;
           cuboMalla.rotateY( Math.PI/4 );
-          cuboMalla.rotateZ( Math.PI/4 );
+          cuboMalla.rotateZ( Math.PI/8 );
         escena.add(cuboMalla);
       }
       color=color+1;
