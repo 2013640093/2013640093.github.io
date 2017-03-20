@@ -7,7 +7,7 @@ var planoCercano =1;
 var planoLejano =1000;
 var camara = new THREE.PerspectiveCamera(campoVision,relacionAspecto,planoCercano,planoLejano);
 camara.position.z= 150;
-Tabla(); 
+
 //////////////////
  var escena = new THREE.Scene();
 ///////////////TABLERO////////////////
@@ -38,6 +38,7 @@ function Tabla(){
 }
 /////////////BOMBA////////////////
 //var cuerpo = new THREE.SphereBufferGeometry(10,64,64);
+function BOMBA (){
 var cuerpo = new THREE.SphereGeometry(10,64,64);
 //var ojoi=new THREE.SphereBufferGeometry(10,32,32);
 var ojoi=new THREE.SphereGeometry(2,32,32);
@@ -89,8 +90,9 @@ bomba.translate(-50,10,75);
 var mallabomba = new THREE.Mesh(bomba, material1);
 mallabomba.rotateY( Math.PI/12 );
 //mallabomba.rotateZ( Math.PI/4 );
-escena.add(mallabomba);
+escena.add(mallabomba);}
 //////HONGO///////
+function HONGO(){
 var geometry = new THREE.SphereGeometry( 10, 60, 60, Math.PI, Math.PI*2, 3*Math.PI/2);
 geometry.translate(0,5,0)
 var material = new THREE.MeshBasicMaterial( { color: 0xddddff } );
@@ -135,8 +137,9 @@ var mallahongoForma = new THREE.Mesh(hongoForma, material2);
 //mallahongoForma.rotateY( Math.PI/4 );
 //mallahongoForma.rotateZ( Math.PI/4 );
 escena.add(mallahongoForma);
+}
 ////////////////
-
+Tabla();
 var renderizador=new THREE.WebGLRenderer();
 renderizador.setSize(window.innerWidth,window.innerHeight);
 document.body.appendChild( renderizador.domElement );
