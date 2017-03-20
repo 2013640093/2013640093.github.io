@@ -5,9 +5,10 @@ var relacionAspecto =window.innerWidth / window.innerHeight;
 var planoCercano =0.2;
 var planoLejano =1000;
 var camara = new THREE.PerspectiveCamera(campoVision,relacionAspecto,planoCercano,planoLejano);
-camara.position.z=600;
-camara.rotation.z = Math.PI/6;
-camara.rotation.y = Math.PI/6;
+camara.position.x = 300;    
+camara.position.y = 500;
+camara.position.z = 300;   
+camara.lookAt(new THREE.Vector3(0,0,0));
 //////////////////
  var escena = new THREE.Scene();
 ///////////////TABLERO////////////////
