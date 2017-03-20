@@ -1,12 +1,12 @@
-//var camara = new THREE.OrtographicCamera();
-//camara.left = window.innerWidth / -2;
-//camara.right = window.innerWidth / 2;
-//camara.top = window.innerHeigth / 2;
-//camara.bottom = window.innerHeigth / -2;
-//camara.near = 0.1;
-//camara.far = 1000;
+var campoVision =45; //grados
+//var campoVision =90; //grados
+//var campoVision =20; //grados
 
-var camara=new THREE.OrthographicCamera( window.innerWidth / - 2, window.innerWidth / 2, window.innerHeight / 2, window.innerHeight / - 2, 1, 1000 );
+var relacionAspecto =window.innerWidth / window.innerHeight;
+var planoCercano =1;
+var planoLejano =1000;
+var camara = new THREE.PerspectiveCamera(campoVision,relacionAspecto,planoCercano,planoLejano);
+camara.position.z= 350;
 //////////////////
  var escena = new THREE.Scene();
 ///////////////TABLERO////////////////
@@ -136,8 +136,7 @@ var mallahongoForma = new THREE.Mesh(hongoForma, material2);
 escena.add(mallahongoForma);
 ////////////////
 
-var renderizador = new THREE.WebGLRenderer();
-renderizador.setSize(window.innerWidth, window.innerHeight);
-
+var renderizador=new THREE.WebGLRenderer();
+renderizador.setSize(window.innerWidth,window.innerHeight);
 document.body.appendChild( renderizador.domElement );
 renderizador.render(escena, camara);
