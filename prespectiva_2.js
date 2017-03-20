@@ -3,7 +3,7 @@
 var campoVision =10; //grados
 
 var relacionAspecto =window.innerWidth / window.innerHeight;
-var planoCercano =0.9;
+var planoCercano =0.2;
 var planoLejano =600;
 var camara = new THREE.PerspectiveCamera(campoVision,relacionAspecto,planoCercano,planoLejano);
 camara.position.z=220;
