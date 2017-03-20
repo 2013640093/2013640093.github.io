@@ -1,6 +1,6 @@
  
 ///////////////TABLERO////////////////
-function Tabla();{
+function Tabla(){
 var escena = new THREE.Scene();
  var color=0;
     for(var i=0;i<8;i++){
