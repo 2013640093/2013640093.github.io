@@ -118,7 +118,7 @@ hongoForma.merge(mallojoi.geometry, mallojoi.matrix);
 hongoForma.merge(mallojod.geometry, mallojod.matrix);
 hongoForma.merge(mallapied.geometry, mallapied.matrix);
 hongoForma.merge(mallapiei.geometry, mallapiei.matrix);
-bomba.translate(75,0,-75);
+homgoForma.translate(75,0,-75);
 var material2 = new THREE.MeshNormalMaterial();
 var mallahongoForma = new THREE.Mesh(hongoForma, material2);
 mallahongoForma.rotateY( Math.PI/4 );
