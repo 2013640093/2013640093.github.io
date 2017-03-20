@@ -56,7 +56,7 @@ figura2.lineTo(-7, -6.1);
 figura2.lineTo(-7, -6);
 var piei = new THREE.ExtrudeGeometry( figura2,
                                        {amount: 2} );
-var material = new THREE.MeshNormalMaterial();
+var material1 = new THREE.MeshNormalMaterial();
 
 var mallacuerpo =new THREE.Mesh( cuerpo, material1);
 var mallojoi =new THREE.Mesh( ojoi, material1);
