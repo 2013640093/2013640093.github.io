@@ -13,13 +13,14 @@ var escena = new THREE.Scene();
         var cuboMalla = new THREE.Mesh(cuboForma,material);
         color=color+1;
           cuboMalla.receiveShadow=true;
+          cuboMalla.rotateY( Math.PI/4 );
+          cuboMalla.rotateZ( Math.PI/4 );
         escena.add(cuboMalla);
       }
       color=color+1;
     }    
 
-cuboMalla.rotateY( Math.PI/4 );
-cuboMalla.rotateZ( Math.PI/4 );
+
 var camara = new THREE.PerspectiveCamera();
 camara.position.z = 100;
 
