@@ -1,4 +1,31 @@
  
+///////////////TABLERO////////////////
+function Tabla();{
+var escena = new THREE.Scene();
+ var color=0;
+    for(var i=0;i<8;i++){
+      for(var j=0;j<8;j++){
+        //var cuboForma=  new THREE.BoxGeometry(10,5,10);
+        //cuboForma.translate(-35+i*10,0,35-j*10);
+         var cuboForma=  new THREE.BoxGeometry(20,5,20);
+        cuboForma.translate(-70+i*20,0,70-j*20);
+        if(color%2!==0){
+          //var material = new THREE.MeshBasicMaterial({color: 0xcccccc});
+         var material = new THREE.MeshBasicMaterial({color: 0xcc0000});
+        }else{
+          //var material = new THREE.MeshBasicMaterial({color: 0x555555});
+         var material = new THREE.MeshBasicMaterial({color: 0x004c99});
+        }
+        var cuboMalla = new THREE.Mesh(cuboForma,material);
+        color=color+1;
+          cuboMalla.receiveShadow=true;
+          cuboMalla.rotateY( Math.PI/4 );
+          cuboMalla.rotateZ( Math.PI/8 );
+        escena.add(cuboMalla);
+      }
+      color=color+1;
+    }
+}
 /////////////BOMBA////////////////
 //var cuerpo = new THREE.SphereBufferGeometry(10,64,64);
 var cuerpo = new THREE.SphereGeometry(10,64,64);
@@ -55,35 +82,10 @@ mallabomba.rotateZ( Math.PI/4 );
 var escena = new THREE.Scene();
 escena.add(mallabomba);
 
-///////////////TABLERO////////////////
-var escena = new THREE.Scene();
- var color=0;
-    for(var i=0;i<8;i++){
-      for(var j=0;j<8;j++){
-        //var cuboForma=  new THREE.BoxGeometry(10,5,10);
-        //cuboForma.translate(-35+i*10,0,35-j*10);
-         var cuboForma=  new THREE.BoxGeometry(20,5,20);
-        cuboForma.translate(-70+i*20,0,70-j*20);
-        if(color%2!==0){
-          //var material = new THREE.MeshBasicMaterial({color: 0xcccccc});
-         var material = new THREE.MeshBasicMaterial({color: 0xcc0000});
-        }else{
-          //var material = new THREE.MeshBasicMaterial({color: 0x555555});
-         var material = new THREE.MeshBasicMaterial({color: 0x004c99});
-        }
-        var cuboMalla = new THREE.Mesh(cuboForma,material);
-        color=color+1;
-          cuboMalla.receiveShadow=true;
-          cuboMalla.rotateY( Math.PI/4 );
-          cuboMalla.rotateZ( Math.PI/8 );
-        escena.add(cuboMalla);
-      }
-      color=color+1;
-    }   
 ////////////////
 var camara = new THREE.PerspectiveCamera();
 camara.position.z = 200;
-
+Tabla();
 var renderizador = new THREE.WebGLRenderer();
 renderizador.setSize( window.innerHeight*.95,
                       window.innerHeight*.95 );
