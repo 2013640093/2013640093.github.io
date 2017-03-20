@@ -73,7 +73,7 @@ bomba.merge(mallamecha.geometry, mallamecha.matrix);
 bomba.merge(mallabase.geometry, mallabase.matrix);
 bomba.merge( mallapied.geometry,  mallapied.matrix);
 bomba.merge( mallapiei.geometry,  mallapiei.matrix);
-base.translate(50,10,50);
+bomba.translate(50,10,50);
 var mallabomba = new THREE.Mesh(bomba, material);
 mallabomba.rotateY( Math.PI/4 );
 mallabomba.rotateZ( Math.PI/4 );
