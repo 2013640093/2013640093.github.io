@@ -6,8 +6,8 @@ function Tabla(){
       for(var j=0;j<8;j++){
         //var cuboForma=  new THREE.BoxGeometry(10,5,10);
         //cuboForma.translate(-35+i*10,0,35-j*10);
-         var cuboForma=  new THREE.BoxGeometry(40,5,40);
-        cuboForma.translate(-140+i*40,0,140-j*40);
+         var cuboForma=  new THREE.BoxGeometry(20,5,20);
+        cuboForma.translate(-70+i*20,0,70-j*20);
         if(color%2!==0){
           //var material = new THREE.MeshBasicMaterial({color: 0xcccccc});
          var material = new THREE.MeshBasicMaterial({color: 0xcc0000});
@@ -74,7 +74,7 @@ bomba.merge(mallamecha.geometry, mallamecha.matrix);
 bomba.merge(mallabase.geometry, mallabase.matrix);
 bomba.merge( mallapied.geometry,  mallapied.matrix);
 bomba.merge( mallapiei.geometry,  mallapiei.matrix);
-bomba.translate(-100,20,100);
+bomba.translate(40,0,40);
 var mallabomba = new THREE.Mesh(bomba, material1);
 mallabomba.rotateY( Math.PI/4 );
 mallabomba.rotateZ( Math.PI/4 );
