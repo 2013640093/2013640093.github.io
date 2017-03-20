@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+  <head>
+    <title>TABLERO EN PRESPECTIVA</title>
+    <meta http-equiv="Content-Type"
+              content="text/html; charset=UTF-8">
+    <style>
+      body { text-align: center; }
+    </style>
+  </head>
+  <body>
+  <script
+  src="https://2013640093.github.io/libreriathree.min.js">
+  </script>
+  <script src="ortografica_2.js"></script>
+  </body>
+</html>
