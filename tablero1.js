@@ -1,7 +1,6 @@
- 
+ var escena = new THREE.Scene();
 ///////////////TABLERO////////////////
 function Tabla(){
-var escena = new THREE.Scene();
  var color=0;
     for(var i=0;i<8;i++){
       for(var j=0;j<8;j++){
@@ -57,8 +56,8 @@ figura2.lineTo(-7, -6.1);
 figura2.lineTo(-7, -6);
 var piei = new THREE.ExtrudeGeometry( figura2,
                                        {amount: 2} );
-//var material = new THREE.MeshNormalMaterial();
-var material1 = new THREE.MeshBasicMaterial({color: 0x202020});
+var material = new THREE.MeshNormalMaterial();
+
 var mallacuerpo =new THREE.Mesh( cuerpo, material1);
 var mallojoi =new THREE.Mesh( ojoi, material1);
 var mallojod =new THREE.Mesh( ojod, material1);
@@ -79,7 +78,6 @@ bomba.translate(50,10,50);
 var mallabomba = new THREE.Mesh(bomba, material1);
 mallabomba.rotateY( Math.PI/4 );
 mallabomba.rotateZ( Math.PI/4 );
-var escena = new THREE.Scene();
 escena.add(mallabomba);
 
 ////////////////
