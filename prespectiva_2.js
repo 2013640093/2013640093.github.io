@@ -1,12 +1,12 @@
 //var campoVision =45; //grados
 //var campoVision =90; //grados
-var campoVision =100; //grados
+var campoVision =10; //grados
 
 var relacionAspecto =window.innerWidth / window.innerHeight;
-var planoCercano =0.2;
+var planoCercano =0.9;
 var planoLejano =600;
 var camara = new THREE.PerspectiveCamera(campoVision,relacionAspecto,planoCercano,planoLejano);
-camara.position.z=300;
+camara.position.z=220;
 //////////////////
  var escena = new THREE.Scene();
 ///////////////TABLERO////////////////
