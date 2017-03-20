@@ -18,8 +18,8 @@ function Tabla(){
         var cuboMalla = new THREE.Mesh(cuboForma,material);
         color=color+1;
           cuboMalla.receiveShadow=true;
-          cuboMalla.rotateY( Math.PI/4 );
-          cuboMalla.rotateZ( Math.PI/8 );
+          //cuboMalla.rotateY( Math.PI/4 );
+          //cuboMalla.rotateZ( Math.PI/8 );
         escena.add(cuboMalla);
       }
       color=color+1;
@@ -76,8 +76,8 @@ bomba.merge( mallapied.geometry,  mallapied.matrix);
 bomba.merge( mallapiei.geometry,  mallapiei.matrix);
 bomba.translate(-75,0,75);
 var mallabomba = new THREE.Mesh(bomba, material1);
-mallabomba.rotateY( Math.PI/4 );
-mallabomba.rotateZ( Math.PI/4 );
+//mallabomba.rotateY( Math.PI/4 );
+//mallabomba.rotateZ( Math.PI/4 );
 escena.add(mallabomba);
 //////HONGO///////
 var geometry = new THREE.SphereGeometry( 10, 60, 60, Math.PI, Math.PI*2, 3*Math.PI/2);
@@ -121,8 +121,8 @@ hongoForma.merge(mallapiei.geometry, mallapiei.matrix);
 hongoForma.translate(75,0,-75);
 var material2 = new THREE.MeshNormalMaterial();
 var mallahongoForma = new THREE.Mesh(hongoForma, material2);
-mallahongoForma.rotateY( Math.PI/4 );
-mallahongoForma.rotateZ( Math.PI/4 );
+//mallahongoForma.rotateY( Math.PI/4 );
+//mallahongoForma.rotateZ( Math.PI/4 );
 escena.add(mallahongoForma);
 ////////////////
 
