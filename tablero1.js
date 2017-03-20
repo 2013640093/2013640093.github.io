@@ -6,8 +6,8 @@ function Tabla(){
       for(var j=0;j<8;j++){
         //var cuboForma=  new THREE.BoxGeometry(10,5,10);
         //cuboForma.translate(-35+i*10,0,35-j*10);
-         var cuboForma=  new THREE.BoxGeometry(20,5,20);
-        cuboForma.translate(-70+i*20,0,70-j*20);
+         var cuboForma=  new THREE.BoxGeometry(30,2,30);
+        cuboForma.translate(-95+i*30,0,95-j*30);
         if(color%2!==0){
           //var material = new THREE.MeshBasicMaterial({color: 0xcccccc});
          var material = new THREE.MeshBasicMaterial({color: 0xcc0000});
@@ -82,7 +82,7 @@ escena.add(mallabomba);
 
 ////////////////
 var camara = new THREE.PerspectiveCamera();
-camara.position.z = 550;
+camara.position.z = 350;
 Tabla();
 var renderizador = new THREE.WebGLRenderer();
 renderizador.setSize( window.innerHeight*.95,
