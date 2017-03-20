@@ -12,9 +12,8 @@ var camara=new THREE.OrthographicCamera( window.innerWidth / - 2, window.innerWi
 camara.updateProjectionMatrix();
 
 camara.position.z = 100;
-
-var cubo = new THREE.Mesh( new THREE.BoxGeometry(30, 30, 30 ),
-                           new THREE.MeshNormalMateral() );
+//var material = new THREE.MeshNormalMaterial();
+var cubo = new THREE.Mesh( new THREE.BoxGeometry(30, 30, 30 ),new THREE.MeshNormalMateral() );
 cubo.rotateY(Math.PI/4);
 var esfera1 = new THREE.Mesh( new THREE.SphereGeometry( 15 ), new THREE.MeshNormalMAterial() );
 esfera1.position.x=50;
