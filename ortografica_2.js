@@ -1,6 +1,8 @@
-var camara=new THREE.OrthographicCamera( window.innerWidth / - 3, window.innerWidth / 3, window.innerHeight / 2, window.innerHeight / - 2, 0.8, 1000);
+var camara=new THREE.OrthographicCamera( window.innerWidth / - 2, window.innerWidth / 2, window.innerHeight / 2, window.innerHeight / - 2, 0.8, 900);
 camara.updateProjectionMatrix();
 camara.position.z = 300;
+camara.position.y = 300;
+
 //////////////////
  var escena = new THREE.Scene();
 ///////////////TABLERO////////////////
