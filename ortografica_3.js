@@ -84,7 +84,7 @@ bomba.merge( mallapied.geometry,  mallapied.matrix);
 bomba.merge( mallapiei.geometry,  mallapiei.matrix);
 bomba.translate(-52,10,70);
 //var mallabomba = new THREE.Mesh(bomba, material1);
-mallabomba.rotateY( Math.PI/12 );
+//mallabomba.rotateY( Math.PI/12 );
 //mallabomba.rotateZ( Math.PI/4 );
 escena.add(mallabomba);}
 //////HONGO///////
