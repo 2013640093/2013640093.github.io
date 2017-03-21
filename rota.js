@@ -1,5 +1,5 @@
 function setup(){
-	escena= new TRHEE.Scene();
+	escena= new THREE.Scene();
 	camara= new THREE.PrespectiveCamera(75, window.innerWidth/window.innerHeight,0.1,1000);
 camara.position.z=5;
 renderer= new THREE.WebGLRRenderer();
