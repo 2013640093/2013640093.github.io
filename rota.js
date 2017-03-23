@@ -5,7 +5,7 @@ camara.aspect=window.innerWidth/window.innerHeight;
 }
 function setup(){
 	escena= new THREE.Scene();
-	camara= new THREE.PrespectiveCamera(75, window.innerWidth/window.innerHeight,0.1,1000);
+	camara= new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight,0.1,1000);
 camara.position.z=5;
 renderer= new THREE.WebGLRRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
@@ -21,6 +21,7 @@ malla.rotation.x += 0.01;
 malla.rotation.y += 0.01;
 renderer.renderer(escena,camara);
 }
+var escena, camara, renderer, malla;
 setup();
 loop();
 listener();
