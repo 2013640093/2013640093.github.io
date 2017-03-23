@@ -10,9 +10,9 @@ camara.position.z=5;
 renderer= new THREE.WebGLRRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
-	//cubo=new THREE.BoxGeometry(1,1,1)
-	//material=new THREE.MeshNormalMaterial()
-malla= new.THREE.Mesh(new THREE.BoxGeometry(1,1,1), new THREE.MeshNormalMaterial());
+	cubo=new THREE.BoxGeometry(1,1,1);
+	material=new THREE.MeshNormalMaterial();
+malla= new.THREE.Mesh(cubo,material);
 escena.add(malla);
 }
 function loop(){
@@ -21,7 +21,7 @@ malla.rotation.x += 0.01;
 malla.rotation.y += 0.01;
 renderer.renderer(escena,camara);
 }
-var escena, camara, renderer, malla;
+var escena, camara, renderer, malla, cubo, material;
 setup();
 loop();
-listener();
+//listener();
