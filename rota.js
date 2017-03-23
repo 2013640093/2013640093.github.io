@@ -5,7 +5,7 @@ camara.position.z=5;
 renderer= new THREE.WebGLRRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
-malla= new.THREE.Mesh(new THREE.SphereGeometry(1),new THREE.MeshNormalMaterial());
+malla= new.THREE.Mesh(new new THREE.BoxGeometry(1,1,1), new THREE.MeshNormalMaterial());
 escena.add(malla);
 }
 function loop(){
