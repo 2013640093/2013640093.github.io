@@ -21,7 +21,7 @@ camara.aspect=window.innerWidth/window.innerHeight;
 	camara.uptadeProjectionMatrix();
 	renderer.setSize(window.innerWidth, window.innerHeight);
 }
-var tipoEvento=´rezize';
+var tipoEvento=´resize';
 	var capturar=false;
 	window.addEventListener(tipoEvento,listener,capturar);
 }
