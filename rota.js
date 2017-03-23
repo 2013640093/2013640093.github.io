@@ -16,7 +16,6 @@ document.body.appendChild(renderer.domElement);
 	material=new THREE.MeshNormalMaterial();
 malla= new.THREE.Mesh(cubo,material);
 escena.add(malla);
-	
 	var listener=function(){
 camara.aspect=window.innerWidth/window.innerHeight;
 	camara.uptadeProjectionMatrix();
@@ -31,6 +30,13 @@ requestAnimationFrame(loop);
 malla.rotation.x += 0.01;
 malla.rotation.y += 0.01;
 renderer.renderer(escena,camara);
+}
+
+function push(e){
+	if(e.keyCode===65)
+        camara.position.z++;
+	if(e.keyCode===90)
+        camara.position.z--;
 }
 var escena, camara, renderer, malla, cubo, material;
 setup();
