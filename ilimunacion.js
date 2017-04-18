@@ -15,3 +15,9 @@ var renderizador = new THREE.WebGLRenderer({canvas: lienzo, antialias: true)};
 document.body.appendChild( renderizador.domElement );
 renderizador.setSise(600,600);
 renderizador.render(escena,camara);
+
+
+//var renderizador = new THREE.WebGLRenderer();
+//renderizador.setSize(window.innerWidth, window.innerHeight);
+//document.body.appendChild( renderizador.domElement );
+//renderizador.render(escena, camara);
