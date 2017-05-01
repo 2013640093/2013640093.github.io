@@ -12,8 +12,7 @@ camara.position.y = 500;
 camara.position.z = 300;   
 camara.lookAt(new THREE.Vector3(0,0,0));
 //////////////////
- var escena = new THREE.Scene();
-escena.add(iluminacion);
+
 ///////////////TABLERO////////////////
 function Tabla(){
  var color=0;
@@ -146,12 +145,16 @@ escena.add(mallahongoForma);
 Tabla();
 HONGO();
 BOMBA();
+
+ var escena = new THREE.Scene();
+escena.add(iluminacion);
+
 var renderizador=new THREE.WebGLRenderer();
 renderizador.setSize(window.innerWidth,window.innerHeight);
 document.body.appendChild( renderizador.domElement );
 renderizador.shadowMapEnabled = true;
 //mallahongoForma.castShadow = true;
 //mallabomba.castShadow =  true;
-cuboMalla.receiveShadow = true;
+//cuboMalla.receiveShadow = true;
 iluminacion.castShadow = true;
 renderizador.render(escena, camara);
