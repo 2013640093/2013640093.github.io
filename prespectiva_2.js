@@ -8,7 +8,7 @@ var camara = new THREE.PerspectiveCamera(campoVision,relacionAspecto,planoCercan
 camara.position.x = 300;    
 camara.position.y = 500;
 camara.position.z = 300;   
-//camara.lookAt(new THREE.Vector3(0,0,0));
+camara.lookAt(new THREE.Vector3(0,0,0));
 //////////////////
  var escena = new THREE.Scene();
 ///////////////TABLERO////////////////
