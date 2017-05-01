@@ -12,7 +12,8 @@ camara.position.y = 500;
 camara.position.z = 300;   
 camara.lookAt(new THREE.Vector3(0,0,0));
 //////////////////
-
+ var escena = new THREE.Scene();
+escena.add(iluminacion);
 ///////////////TABLERO////////////////
 function Tabla(){
  var color=0;
@@ -34,7 +35,7 @@ function Tabla(){
           //cuboMalla.receiveShadow=true;
           //cuboMalla.rotateY( Math.PI/4 );
           //cuboMalla.rotateZ( Math.PI/8 );
-        
+        escena.add(cuboMalla);
       }
       color=color+1;
     }
@@ -93,6 +94,7 @@ bomba.translate(-52,10,70);
 var mallabomba = new THREE.Mesh(bomba, material1);
 //mallabomba.rotateY( Math.PI/12 );
 //mallabomba.rotateZ( Math.PI/4 );
+ escena.add(mallabomba);
 }
 //////HONGO///////
 function HONGO(){
@@ -139,7 +141,7 @@ var material2 = new THREE.MeshLambertMaterial();
 var mallahongoForma = new THREE.Mesh(hongoForma, material2);
 //mallahongoForma.rotateY( Math.PI/4 );
 //mallahongoForma.rotateZ( Math.PI/4 );
-
+escena.add(mallahongoForma);
 }
 ////////////////
 Tabla();
@@ -147,10 +149,10 @@ HONGO();
 BOMBA();
 
  var escena = new THREE.Scene();
-escena.add(iluminacion);
-escena.add(cuboMalla);
-escena.add(mallahongoForma);
-escena.add(mallabomba);
+//escena.add(iluminacion);
+//escena.add(cuboMalla);
+//escena.add(mallahongoForma);
+//escena.add(mallabomba);
 var renderizador=new THREE.WebGLRenderer();
 renderizador.setSize(window.innerWidth,window.innerHeight);
 document.body.appendChild( renderizador.domElement );
