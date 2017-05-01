@@ -1,4 +1,5 @@
 var directionalLight = new THREE.DirectionalLight( 0xffffff, 1 );
+directionalLight.position.y=50;
 var campoVision =70; //grados
 //var campoVision =90; //grados
 //var campoVision =20; //grados
