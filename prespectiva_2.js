@@ -151,7 +151,7 @@ renderizador.setSize(window.innerWidth,window.innerHeight);
 document.body.appendChild( renderizador.domElement );
 renderizador.shadowMapEnabled = true;
 //mallahongoForma.castShadow = true;
-mallabomba.castShadow =  true;
+//mallabomba.castShadow =  true;
 cuboMalla.receiveShadow = true;
 iluminacion.castShadow = true;
 renderizador.render(escena, camara);
