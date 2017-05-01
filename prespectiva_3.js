@@ -33,6 +33,7 @@ function Tabla(){
           //cuboMalla.rotateY( Math.PI/4 );
           //cuboMalla.rotateZ( Math.PI/8 );
         escena.add(cuboMalla);
+       //
       }
       color=color+1;
     }
