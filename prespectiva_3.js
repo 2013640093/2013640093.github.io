@@ -55,7 +55,7 @@ var mecha = new THREE.CylinderGeometry( 1, 1, 8, 32 );
 mecha.translate(0,10,0);
 var base = new THREE.CylinderGeometry( 2, 2, 4, 32 );
 base.translate(0,10,0);
-
+//
 var figura = new THREE.Shape();
 figura.moveTo(7, -6);
 figura.lineTo(7.3, -6);
