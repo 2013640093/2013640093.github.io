@@ -1,4 +1,4 @@
-var iluminacion = new THREE.PointLight(0XFFFFFF);
+var iluminacion = new THREE.PointLight(0xF932D2;
 iluminacion.position.y=200;
 //var campoVision =45; //grados
 //var campoVision =90; //grados
