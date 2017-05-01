@@ -37,7 +37,7 @@ function Tabla(){
           //cuboMalla.rotateY( Math.PI/4 );
           //cuboMalla.rotateZ( Math.PI/8 );
         escena.add(cuboMalla);
-       tablero.receiveShadow = true;
+       cuboMalla.receiveShadow = true;
       }
       color=color+1;
     }
