@@ -16,7 +16,7 @@ camara.lookAt(new THREE.Vector3(0,0,0));
 //////////////////
  var escena = new THREE.Scene();
 escena.add(iluminacion);
-//scene.add( directionalLight );
+//escena.add( directionalLight );
 //directionalLight.castShadow = true;
 iluminacion.castShadow = true;
 ///////////////TABLERO////////////////
