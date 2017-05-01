@@ -14,6 +14,7 @@ camara.lookAt(new THREE.Vector3(0,0,0));
 //////////////////
  var escena = new THREE.Scene();
 escena.add(iluminacion);
+iluminacion.castShadow = true;
 ///////////////TABLERO////////////////
 function Tabla(){
  var color=0;
@@ -36,6 +37,7 @@ function Tabla(){
           //cuboMalla.rotateY( Math.PI/4 );
           //cuboMalla.rotateZ( Math.PI/8 );
         escena.add(cuboMalla);
+       tablero.receiveShadow = true;
       }
       color=color+1;
     }
@@ -95,6 +97,7 @@ var mallabomba = new THREE.Mesh(bomba, material1);
 //mallabomba.rotateY( Math.PI/12 );
 //mallabomba.rotateZ( Math.PI/4 );
  escena.add(mallabomba);
+ mallabomba.castShadow = true;
 }
 //////HONGO///////
 function HONGO(){
@@ -142,6 +145,7 @@ var mallahongoForma = new THREE.Mesh(hongoForma, material2);
 //mallahongoForma.rotateY( Math.PI/4 );
 //mallahongoForma.rotateZ( Math.PI/4 );
 escena.add(mallahongoForma);
+ mallahongoForma.castShadow = true;
 }
 ////////////////
 Tabla();
@@ -157,8 +161,8 @@ var renderizador=new THREE.WebGLRenderer();
 renderizador.setSize(window.innerWidth,window.innerHeight);
 document.body.appendChild( renderizador.domElement );
 renderizador.shadowMapEnabled = true;
-mallahongoForma.castShadow = true;
-mallabomba.castShadow =  true;
-cuboMalla.receiveShadow = true;
-iluminacion.castShadow = true;
+//mallahongoForma.castShadow = true;
+//mallabomba.castShadow =  true;
+//cuboMalla.receiveShadow = true;
+
 renderizador.render(escena, camara);
