@@ -95,8 +95,10 @@ bomba.translate(-52,10,70);
 var mallabomba = new THREE.Mesh(bomba, material1);
 //mallabomba.rotateY( Math.PI/12 );
 //mallabomba.rotateZ( Math.PI/4 );
-escena.add(mallabomba);}
+escena.add(mallabomba);
 mallabomba.castShadow = true;
+}
+
 //////HONGO///////
 function HONGO(){
 var geometry = new THREE.SphereGeometry( 10, 60, 60, Math.PI, Math.PI*2, 3*Math.PI/2);
