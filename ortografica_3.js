@@ -1,10 +1,12 @@
 var iluminacion = new THREE.PointLight(0xF6F932);
 iluminacion.position.y=200;
 iluminacion.position.x=120;
+iluminacion.position.z=200;
 
 var iluminacion2 = new THREE.PointLight(0x32F9DE);
-iluminacion2.position.y=-150;
+iluminacion2.position.y=1500;
 iluminacion2.position.x=-120;
+iluminacion2.position.z=-200;
 
 var camara=new THREE.OrthographicCamera( window.innerWidth / - 3, window.innerWidth / 3, window.innerHeight / 3,window.innerHeight / - 3, 1, 8000);
 camara.updateProjectionMatrix();
@@ -18,8 +20,8 @@ camara.updateProjectionMatrix();
 escena.add(iluminacion);
 iluminacion.castShadow = true;
 
-//escena.add(iluminacion2);
-//iluminacion2.castShadow = true;
+escena.add(iluminacion2);
+iluminacion2.castShadow = true;
 ///////////////TABLERO////////////////
 function Tabla(){
  var color=0;
@@ -146,7 +148,7 @@ hongoForma.merge(mallojod.geometry, mallojod.matrix);
 hongoForma.merge(mallapied.geometry, mallapied.matrix);
 hongoForma.merge(mallapiei.geometry, mallapiei.matrix);
 hongoForma.translate(90,10,-77);
-var material2 = new THREE.MeshNormalMaterial();
+var material2 = new THREE.MeshPhongMaterial();
 var mallahongoForma = new THREE.Mesh(hongoForma, material2);
 //mallahongoForma.rotateY( Math.PI/4 );
 //mallahongoForma.rotateZ( Math.PI/4 );
