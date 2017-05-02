@@ -1,7 +1,7 @@
-var iluminacion = new THREE.PointLight(0xF6F932);
-iluminacion.position.y=200;
-iluminacion.position.x=120;
-iluminacion.position.z=200;
+//var iluminacion = new THREE.PointLight(0xF6F932);
+//iluminacion.position.y=200;
+//iluminacion.position.x=120;
+//iluminacion.position.z=200;
 
 var iluminacion2 = new THREE.PointLight(0x32F9DE);
 iluminacion2.position.y=1500;
@@ -17,8 +17,8 @@ camara.updateProjectionMatrix();
 //////////////////
  var escena = new THREE.Scene();
 
-escena.add(iluminacion);
-iluminacion.castShadow = true;
+//escena.add(iluminacion);
+//iluminacion.castShadow = true;
 
 escena.add(iluminacion2);
 iluminacion2.castShadow = true;
