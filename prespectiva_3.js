@@ -171,5 +171,6 @@ var renderizador=new THREE.WebGLRenderer();
 renderizador.setSize(window.innerWidth,window.innerHeight);
 document.body.appendChild( renderizador.domElement );
 renderizador.shadowMapEnabled = true;
-
+var helper = new THREE.CameraHelper( light.shadow.camera );
+scene.add( helper );
 renderizador.render(escena, camara);
