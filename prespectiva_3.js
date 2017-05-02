@@ -5,7 +5,7 @@
 //var iluminacion = new THREE.PointLight(0xF932D2);
 //iluminacion.position.y=200;
 
-var spotLight = new THREE.SpotLight( 0xffffff );
+var spotLight = new THREE.PointLight( 0xffffff );
 spotLight.position.y=200;
 var campoVision =50; //grados
 //var campoVision =90; //grados
