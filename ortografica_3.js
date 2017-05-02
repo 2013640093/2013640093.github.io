@@ -1,3 +1,11 @@
+var iluminacion = new THREE.PointLight(0xF6F932);
+iluminacion.position.y=200;
+iluminacion.position.x=120;
+
+var iluminacion2 = new THREE.PointLight(0x32F9DE);
+iluminacion2.position.y=-200;
+iluminacion2.position.x=-120;
+
 var camara=new THREE.OrthographicCamera( window.innerWidth / - 3, window.innerWidth / 3, window.innerHeight / 3,window.innerHeight / - 3, 1, 8000);
 camara.updateProjectionMatrix();
     camara.position.x = 200;    
@@ -6,6 +14,12 @@ camara.updateProjectionMatrix();
     camara.lookAt(new THREE.Vector3(0,0,0));
 //////////////////
  var escena = new THREE.Scene();
+
+escena.add(iluminacion);
+iluminacion.castShadow = true;
+
+escena.add(iluminacion2);
+iluminacion2.castShadow = true;
 ///////////////TABLERO////////////////
 function Tabla(){
  var color=0;
@@ -20,7 +34,7 @@ function Tabla(){
          var material = new THREE.MeshBasicMaterial({color: 0xcc0000});
         }else{
           //var material = new THREE.MeshBasicMaterial({color: 0x555555});
-         var material = new THREE.MeshBasicMaterial({color: 0x004c99});
+         var material = new THREE.MeshPhongMaterial({color: 0x004c99});
         }
         var cuboMalla = new THREE.Mesh(cuboForma,material);
         color=color+1;
@@ -28,6 +42,8 @@ function Tabla(){
           //cuboMalla.rotateY( Math.PI/4 );
           //cuboMalla.rotateZ( Math.PI/8 );
         escena.add(cuboMalla);
+          cuboMalla.receiveShadow = true;
+          
       }
       color=color+1;
     }
@@ -87,6 +103,7 @@ var mallabomba = new THREE.Mesh(bomba, material1);
 //mallabomba.rotateY( Math.PI/12 );
 //mallabomba.rotateZ( Math.PI/4 );
 escena.add(mallabomba);
+    mallabomba.castShadow = true;
 }
 //////HONGO///////
 function HONGO(){
@@ -134,6 +151,7 @@ var mallahongoForma = new THREE.Mesh(hongoForma, material2);
 //mallahongoForma.rotateY( Math.PI/4 );
 //mallahongoForma.rotateZ( Math.PI/4 );
 escena.add(mallahongoForma);
+    mallahongoForma.castShadow = true;
 }
 ////////////////
 Tabla();
