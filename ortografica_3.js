@@ -3,7 +3,7 @@ iluminacion.position.y=200;
 iluminacion.position.x=120;
 
 var iluminacion2 = new THREE.PointLight(0x32F9DE);
-iluminacion2.position.y=-200;
+iluminacion2.position.y=-150;
 iluminacion2.position.x=-120;
 
 var camara=new THREE.OrthographicCamera( window.innerWidth / - 3, window.innerWidth / 3, window.innerHeight / 3,window.innerHeight / - 3, 1, 8000);
@@ -18,8 +18,8 @@ camara.updateProjectionMatrix();
 escena.add(iluminacion);
 iluminacion.castShadow = true;
 
-escena.add(iluminacion2);
-iluminacion2.castShadow = true;
+//escena.add(iluminacion2);
+//iluminacion2.castShadow = true;
 ///////////////TABLERO////////////////
 function Tabla(){
  var color=0;
@@ -31,7 +31,7 @@ function Tabla(){
         cuboForma.translate(-95+i*30,0,95-j*30);
         if(color%2!==0){
           //var material = new THREE.MeshBasicMaterial({color: 0xcccccc});
-         var material = new THREE.MeshBasicMaterial({color: 0xcc0000});
+         var material = new THREE.MeshPhongMaterial({color: 0xcc0000});
         }else{
           //var material = new THREE.MeshBasicMaterial({color: 0x555555});
          var material = new THREE.MeshPhongMaterial({color: 0x004c99});
@@ -80,7 +80,7 @@ figura2.lineTo(-7, -6.1);
 figura2.lineTo(-7, -6);
 var piei = new THREE.ExtrudeGeometry( figura2,
                                        {amount: 2} );
-var material1 = new THREE.MeshNormalMaterial();
+var material1 = new THREE.MeshPhongMaterial();
 
 var mallacuerpo =new THREE.Mesh( cuerpo, material1);
 var mallojoi =new THREE.Mesh( ojoi, material1);
@@ -109,7 +109,7 @@ escena.add(mallabomba);
 function HONGO(){
 var geometry = new THREE.SphereGeometry( 10, 60, 60, Math.PI, Math.PI*2, 3*Math.PI/2);
 geometry.translate(0,5,0)
-var material = new THREE.MeshBasicMaterial( { color: 0xddddff } );
+var material = new THREE.MeshPhongMaterial( { color: 0xddddff } );
 var sphere = new THREE.Mesh( geometry, material );
 var troncoForma = new THREE.CylinderGeometry(3, 6, 14);
 var troncoMalla = new THREE.Mesh(troncoForma);
