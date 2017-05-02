@@ -1,9 +1,9 @@
 var directionalLight = new THREE.DirectionalLight( 0xffffff, 1 );
-directionalLight.position.y=50;
+directionalLight.position.y=20;
 directionalLight.position.z=30;
 
-var iluminacion = new THREE.PointLight(0xF932D2);
-iluminacion.position.y=200;
+//var iluminacion = new THREE.PointLight(0xF932D2);
+//iluminacion.position.y=200;
 
 var campoVision =50; //grados
 //var campoVision =90; //grados
@@ -20,8 +20,8 @@ camara.lookAt(new THREE.Vector3(0,0,0));
  var escena = new THREE.Scene();
 escena.add(directionalLight);
 directionalLight.castShadow = true;
-escena.add(iluminacion);
-iluminacion.castShadow = true;
+//escena.add(iluminacion);
+//iluminacion.castShadow = true;
 ///////////////TABLERO////////////////
 function Tabla(){
  var color=0;
