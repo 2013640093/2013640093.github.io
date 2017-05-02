@@ -12,7 +12,7 @@ var camara=new THREE.OrthographicCamera( window.innerWidth / - 3, window.innerWi
 camara.updateProjectionMatrix();
     camara.position.x = 200;    
     camara.position.y = 400;
-    camara.position.z = 500;
+    camara.position.z = 300;
     camara.lookAt(new THREE.Vector3(0,0,0));
 //////////////////
  var escena = new THREE.Scene();
