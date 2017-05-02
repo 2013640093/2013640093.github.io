@@ -4,7 +4,7 @@
 //iluminacion.position.z=200;
 
 var iluminacion2 = new THREE.PointLight(0x32F9DE);
-iluminacion2.position.y=1500;
+iluminacion2.position.y=100;
 iluminacion2.position.x=-120;
 iluminacion2.position.z=-200;
 
