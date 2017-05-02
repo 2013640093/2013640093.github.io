@@ -4,7 +4,7 @@
 
 //var iluminacion = new THREE.PointLight(0xF932D2);
 //iluminacion.position.y=200;
-
+var helper = new THREE.CameraHelper( spotLight.shadow.camera );
 var spotLight = new THREE.SpotLight( 0xffffff );
 spotLight.position.y=200;
 var campoVision =50; //grados
@@ -28,6 +28,9 @@ spotLight.shadow.mapSize.height = 1024;
 spotLight.shadow.camera.near = 500;
 spotLight.shadow.camera.far = 4000;
 spotLight.shadow.camera.fov = 30;
+
+
+scene.add( helper );
 //escena.add(iluminacion);
 //iluminacion.castShadow = true;
 ///////////////TABLERO////////////////
@@ -171,6 +174,5 @@ var renderizador=new THREE.WebGLRenderer();
 renderizador.setSize(window.innerWidth,window.innerHeight);
 document.body.appendChild( renderizador.domElement );
 renderizador.shadowMapEnabled = true;
-var helper = new THREE.CameraHelper( spotLight.shadow.camera );
-scene.add( helper );
+
 renderizador.render(escena, camara);
