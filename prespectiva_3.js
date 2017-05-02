@@ -5,7 +5,7 @@
 //var iluminacion = new THREE.PointLight(0xF932D2);
 //iluminacion.position.y=200;
 
-var spotLight = new THREE.PointLight( 0xffffff );
+var spotLight = new THREE.SpotLight( 0xffffff );
 spotLight.position.y=200;
 var campoVision =50; //grados
 //var campoVision =90; //grados
@@ -22,16 +22,7 @@ camara.lookAt(new THREE.Vector3(0,0,0));
  var escena = new THREE.Scene();
 escena.add(spotLight);
 spotLight.castShadow = true;
-spotLight.shadow.mapSize.width = 1024;
-spotLight.shadow.mapSize.height = 1024;
 
-spotLight.shadow.camera.near = 500;
-spotLight.shadow.camera.far = 4000;
-spotLight.shadow.camera.fov = 30;
-
-
-//escena.add(iluminacion);
-spotLight.castShadow = true;
 ///////////////TABLERO////////////////
 function Tabla(){
  var color=0;
