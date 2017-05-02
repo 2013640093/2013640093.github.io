@@ -31,7 +31,7 @@ spotLight.shadow.camera.fov = 30;
 
 
 //escena.add(iluminacion);
-//iluminacion.castShadow = true;
+spotLight.castShadow = true;
 ///////////////TABLERO////////////////
 function Tabla(){
  var color=0;
