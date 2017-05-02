@@ -164,4 +164,5 @@ BOMBA();
 var renderizador = new THREE.WebGLRenderer();
 renderizador.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild( renderizador.domElement );
+renderizador.shadowMapEnabled = true;
 renderizador.render(escena, camara);
