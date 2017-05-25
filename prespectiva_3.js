@@ -85,7 +85,7 @@ figura2.lineTo(-7, -6);
 var piei = new THREE.ExtrudeGeometry( figura2,
                                        {amount: 2} );
 //var material1 = new THREE.MeshPhongMaterial();
-var material1 = new THREE.MeshBasicMaterial({map: textura});
+var material1 = new THREE.MeshPhongMaterial({map: textura});
  
 var mallacuerpo =new THREE.Mesh( cuerpo, material1);
 var mallojoi =new THREE.Mesh( ojoi, material1);
