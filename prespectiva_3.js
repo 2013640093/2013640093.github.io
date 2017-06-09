@@ -55,6 +55,7 @@ function Tabla(){
 function BOMBA (){
  THREE.ImageUtils.crossOrigin = '';
  var textura =THREE.ImageUtils.loadTexture('crate.gif');
+var material1 = new THREE.MeshPhongMaterial({map: textura});
 var cuerpo = new THREE.SphereGeometry(10,64,64);
 //var ojoi=new THREE.SphereBufferGeometry(10,32,32);
 var ojoi=new THREE.SphereGeometry(2,32,32);
@@ -85,7 +86,7 @@ figura2.lineTo(-7, -6);
 var piei = new THREE.ExtrudeGeometry( figura2,
                                        {amount: 2} );
 //var material1 = new THREE.MeshPhongMaterial();
-var material1 = new THREE.MeshPhongMaterial({map: textura});
+
  
 var mallacuerpo =new THREE.Mesh( cuerpo, material1);
 var mallojoi =new THREE.Mesh( ojoi, material1);
