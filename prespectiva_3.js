@@ -54,7 +54,7 @@ function Tabla(){
 //var cuerpo = new THREE.SphereBufferGeometry(10,64,64);
 function BOMBA (){
  THREE.ImageUtils.crossOrigin = '';
- var textura =THREE.ImageUtils.loadTexture('crate.gif');
+ var textura =THREE.ImageUtils.loadTexture('2013640173Ivan.github.io/brick_diffuse.jpg');
 var material1 = new THREE.MeshPhongMaterial({map: textura});
 var cuerpo = new THREE.SphereGeometry(10,64,64);
 //var ojoi=new THREE.SphereBufferGeometry(10,32,32);
