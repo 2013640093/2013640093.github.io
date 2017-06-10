@@ -112,6 +112,11 @@ escena.add(mallabomba);
 //mallabomba.castShadow = true;
 }
 
+
+
+
+
+
 //////HONGO///////
 function HONGO(){
 var geometry = new THREE.SphereGeometry( 10, 60, 60, Math.PI, Math.PI*2, 3*Math.PI/2);
@@ -160,13 +165,31 @@ var mallahongoForma = new THREE.Mesh(hongoForma, material2);
 escena.add(mallahongoForma);
  mallahongoForma.castShadow = true;
 }
+
+
+
 ////////////////
-Tabla();
-HONGO();
-BOMBA();
+
 var renderizador=new THREE.WebGLRenderer();
 renderizador.setSize(window.innerWidth,window.innerHeight);
 document.body.appendChild( renderizador.domElement );
 renderizador.shadowMapEnabled = true;
-
 renderizador.render(escena, camara);
+
+function loop2() 
+{
+requestAnimationFrame(loop2);
+
+
+mallabomba.rotation.x += 0.00;
+
+mallabomba.rotation.y += 0.00;
+
+
+renderer.render(escena, camara);
+
+}
+Tabla();
+HONGO();
+BOMBA();
+loop2();
