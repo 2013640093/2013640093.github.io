@@ -55,7 +55,7 @@ function Tabla(){
 function BOMBA (){
  THREE.ImageUtils.crossOrigin = '';
  var textura =THREE.ImageUtils.loadTexture('crate.gif');
-var material1 = new THREE.MeshBasicMaterial({map: textura});
+var matext = new THREE.MeshBasicMaterial({map: textura});
 var cuerpo = new THREE.SphereGeometry(10,64,64);
 //var ojoi=new THREE.SphereBufferGeometry(10,32,32);
 var ojoi=new THREE.SphereGeometry(2,32,32);
@@ -85,7 +85,7 @@ figura2.lineTo(-7, -6.1);
 figura2.lineTo(-7, -6);
 var piei = new THREE.ExtrudeGeometry( figura2,
                                        {amount: 2} );
-//var material1 = new THREE.MeshPhongMaterial();
+var material1 = new THREE.MeshPhongMaterial();
 
  
 var mallacuerpo =new THREE.Mesh( cuerpo, material1);
@@ -105,11 +105,11 @@ bomba.merge(mallabase.geometry, mallabase.matrix);
 bomba.merge( mallapied.geometry,  mallapied.matrix);
 bomba.merge( mallapiei.geometry,  mallapiei.matrix);
 bomba.translate(-52,10,70);
-var mallabomba = new THREE.Mesh(bomba, material1);
+var mallabomba = new THREE.Mesh(bomba, matext);
 //mallabomba.rotateY( Math.PI/12 );
 //mallabomba.rotateZ( Math.PI/4 );
 escena.add(mallabomba);
-mallabomba.castShadow = true;
+//mallabomba.castShadow = true;
 }
 
 //////HONGO///////
