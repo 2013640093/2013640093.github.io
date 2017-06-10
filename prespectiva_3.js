@@ -191,5 +191,5 @@ renderer.render(escena, camara);
 }
 Tabla();
 HONGO();
-BOMBA();
+//BOMBA();
 loop2();
