@@ -52,7 +52,7 @@ function Tabla(){
 }
 /////////////BOMBA////////////////
 //var cuerpo = new THREE.SphereBufferGeometry(10,64,64);
-function BOMBA (){
+//function BOMBA (){
  THREE.ImageUtils.crossOrigin = '';
  var textura =THREE.ImageUtils.loadTexture('crate.gif');
 var matext = new THREE.MeshBasicMaterial({map: textura});
@@ -110,7 +110,7 @@ var mallabomba = new THREE.Mesh(bomba, matext);
 //mallabomba.rotateZ( Math.PI/4 );
 escena.add(mallabomba);
 //mallabomba.castShadow = true;
-}
+//}
 
 
 
