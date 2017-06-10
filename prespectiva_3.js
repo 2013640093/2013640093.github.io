@@ -186,7 +186,7 @@ mallabomba.rotation.x += 0.00;
 mallabomba.rotation.y += 0.00;
 
 
-renderer.render(escena, camara);
+renderizador.render(escena, camara);
 
 }
 Tabla();
