@@ -239,8 +239,8 @@ function setup(){
   document.body.appendChild( renderer.domElement );
   luzPuntual=new THREE.PointLight(0xFFFFFF);
   luzPuntual.position.x = 350;
-  luzPuntual.position.y = 350;
-  luzPuntual.position.z = 50;
+  luzPuntual.position.y = -350;
+  luzPuntual.position.z = 150;
   luzPuntual.castShadow=true;
   environment.add( camara );
   environment.add( luzPuntual );
