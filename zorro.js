@@ -317,13 +317,13 @@ zorro.merge(mallacuerpo.geometry, mallacuerpo.matrix);
 zorro.merge(mallojoi.geometry, mallojoi.matrix);
 zorro.merge(mallojod.geometry, mallojod.matrix);
 //zorro.merge(mallabot.geometry,mallabot.matrix);
-
+zorro.translate(0,0,0)
 var mallazorro = new THREE.Mesh(zorro, matext);
 //mallazorro.rotateX(Math.PI/4);
 mallazorro.rotateY(Math.PI*2/3);
 //mallazorro.rotateY(Math.PI/2);
 var escena = new THREE.Scene();
-mallazorro.translate(0,0,0)
+
 escena.add( mallazorro );
 escena.add(mallabot);
 
