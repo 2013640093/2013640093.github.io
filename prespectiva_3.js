@@ -137,6 +137,7 @@ var mallabomba = new THREE.Mesh(bomba, matext);
 //mallabomba.rotateY( Math.PI/12 );
 //mallabomba.rotateZ( Math.PI/4 );
 escena.add(mallabomba);
+mallabomba.scale.set(0.75,0.75,0.75);
 //mallabomba.castShadow = true;
 //}
 
