@@ -175,6 +175,7 @@ function Pieza( x, y ){
   this.actuator = new THREE.Mesh( new PROTOTIPO.Peon(), new THREE.MeshLambertMaterial( {map: textura} ) );
   this.actuator.scale.set( 1, 1, 1 );
   this.actuator.rotateX( Math.PI/2 );
+  this.actuator.translate(0,2,0);
   this.actuator.castShadow = true;
   this.add( this.actuator );
   document.addEventListener("keydown", movement, false);
@@ -237,9 +238,9 @@ function setup(){
   renderer.shadowMap.enabled=true;
   document.body.appendChild( renderer.domElement );
   luzPuntual=new THREE.PointLight(0xFFFFFF);
-  luzPuntual.position.x = 150;
-  luzPuntual.position.y = 150;
-  luzPuntual.position.z = 200;
+  luzPuntual.position.x = 350;
+  luzPuntual.position.y = 350;
+  luzPuntual.position.z = 50;
   luzPuntual.castShadow=true;
   environment.add( camara );
   environment.add( luzPuntual );
