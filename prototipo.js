@@ -229,9 +229,9 @@ function setup(){
   environment = new Environment();
   environment.setMap( mapa );
   environment.setMapPiece( pieza );
-  camara = new THREE.PerspectiveCamera(30, window.innerWidth/window.innerHeight, .7, 1000 );
+  camara = new THREE.PerspectiveCamera(45, window.innerWidth/window.innerHeight, .7, 1000 );
   camara.position.z =150;
-  camara.position.y =-400;
+  camara.position.y =-500;
   camara.position.x =150;
   camara.lookAt( new THREE.Vector3( 0, 0, 0 ) );
   renderer = new THREE.WebGLRenderer();
