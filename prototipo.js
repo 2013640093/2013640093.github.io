@@ -175,8 +175,7 @@ function Pieza( x, y ){
   this.actuator = new THREE.Mesh( new PROTOTIPO.Peon(), new THREE.MeshLambertMaterial( {map: textura} ) );
   this.actuator.scale.set( 1, 1, 1 );
   this.actuator.rotateX( Math.PI/2 );
-  this.actuator.translate(0,2,0);
-  this.actuator.castShadow = true;
+   this.actuator.castShadow = true;
   this.add( this.actuator );
   document.addEventListener("keydown", movement, false);
   }
@@ -229,9 +228,9 @@ function setup(){
   environment = new Environment();
   environment.setMap( mapa );
   environment.setMapPiece( pieza );
-  camara = new THREE.PerspectiveCamera( 30, window.innerWidth/window.innerHeight, .5, 1000 );
+  camara = new THREE.PerspectiveCamera(90, window.innerWidth/window.innerHeight, .5, 1000 );
   camara.position.z =150;
-  camara.position.y = -500;
+  camara.position.y =400;
   camara.lookAt( new THREE.Vector3( 0, 0, 0 ) );
   renderer = new THREE.WebGLRenderer();
   renderer.setSize( window.innerHeight*.95, window.innerHeight*.95 );
