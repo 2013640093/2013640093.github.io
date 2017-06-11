@@ -17,6 +17,7 @@ for ( var deg = 0; deg <= 180; deg += 6 ) {
 
 
 
+
 geometry = new THREE.LatheGeometry( points, 32 );
 
 var material = new THREE.MeshBasicMaterial( {color: 0x09F7F3} );
@@ -25,6 +26,13 @@ var material2 = new THREE.MeshBasicMaterial( {color: 0xF90AEE} );
 
 var Ovo = new THREE.Mesh( geometry,material);
 Ovo.position.set(0, 0, 0);
+
+
+var bottom = new THREE.CylinderGeometry( 14, 14, 2.5, 32 );
+
+bottom.translate(0,-10,0)
+
+var mallabot = new THREE.Mesh( bottom, material );
 
 //escena.add(sphere,troncoMalla,mallojoi,mallojod,mallapied,mallapiei);
 
@@ -113,8 +121,7 @@ pingui.merge(mallojoi.geometry, mallojoi.matrix);
 pingui.merge(mallapic.geometry, mallapic.matrix);
 pingui.merge(mallapiei.geometry, mallapiei.matrix);
 pingui.merge(mallapied.geometry, mallapied.matrix);
-
-
+pingui.merge(mallabot.geometry, mallabot.matrix);
 var material3 = new THREE.MeshNormalMaterial();
 
 
