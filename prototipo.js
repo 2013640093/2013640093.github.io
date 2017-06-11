@@ -26,14 +26,15 @@ PROTOTIPO.Peon = function(){
   this.merge( baseMalla.geometry, baseMalla.matrix );*/
   
 var cuerpo = new THREE.SphereGeometry(10,64,64);
+cuerpo.translate(0,2,0);
 var ojoi=new THREE.SphereGeometry(2,32,32);
-ojoi.translate(-2,2,8);
+ojoi.translate(-2,4,8);
 var ojod=new THREE.SphereGeometry(2,32,32);
-ojod.translate(2,2,8);
+ojod.translate(2,4,8);
 var mecha = new THREE.CylinderGeometry( 1, 1, 8, 32 );
-mecha.translate(0,10,0);
+mecha.translate(0,12,0);
 var base = new THREE.CylinderGeometry( 2, 2, 4, 32 );
-base.translate(0,10,0);
+base.translate(0,12,0);
 var figura = new THREE.Shape();
 figura.moveTo(7, -6);
 figura.lineTo(7.3, -6);
@@ -228,9 +229,10 @@ function setup(){
   environment = new Environment();
   environment.setMap( mapa );
   environment.setMapPiece( pieza );
-  camara = new THREE.PerspectiveCamera(30, window.innerWidth/window.innerHeight, 0.2, 1000 );
+  camara = new THREE.PerspectiveCamera(30, window.innerWidth/window.innerHeight, .7, 1000 );
   camara.position.z =150;
   camara.position.y =-400;
+  camara.position.x =150;
   camara.lookAt( new THREE.Vector3( 0, 0, 0 ) );
   renderer = new THREE.WebGLRenderer();
   //renderer.setSize( window.innerHeight*.95, window.innerHeight*.95 );
