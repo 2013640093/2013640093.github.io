@@ -228,12 +228,13 @@ function setup(){
   environment = new Environment();
   environment.setMap( mapa );
   environment.setMapPiece( pieza );
-  camara = new THREE.PerspectiveCamera(90, window.innerWidth/window.innerHeight, .5, 1000 );
+  camara = new THREE.PerspectiveCamera(30, window.innerWidth/window.innerHeight, 0.2, 1000 );
   camara.position.z =150;
-  camara.position.y =400;
+  camara.position.y =-400;
   camara.lookAt( new THREE.Vector3( 0, 0, 0 ) );
   renderer = new THREE.WebGLRenderer();
-  renderer.setSize( window.innerHeight*.95, window.innerHeight*.95 );
+  //renderer.setSize( window.innerHeight*.95, window.innerHeight*.95 );
+  renderer.setSize( window.innerHeight, window.innerHeight);
   renderer.shadowMap.enabled=true;
   document.body.appendChild( renderer.domElement );
   luzPuntual=new THREE.PointLight(0xFFFFFF);
