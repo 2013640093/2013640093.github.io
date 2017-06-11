@@ -83,7 +83,8 @@ renderizador.setSize( window.innerHeight*.95,
 document.body.appendChild( renderizador.domElement );
 renderizador.render( escena, camara );
 
-loop(){
+loop()
+{
   
   requestAnimationFrame(loop)
 mallabomba.rotation.x += 0.00;
@@ -94,3 +95,6 @@ mallabomba.rotation.y += 0.00;
 renderizador.render(escena, camara);
 
 }
+
+
+loop();
