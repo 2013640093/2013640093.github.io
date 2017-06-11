@@ -10,9 +10,9 @@ camara.lookAt(new THREE.Vector3(0,0,0));
 
 
 
-var bottom = new THREE.CylinderGeometry( 14, 14, 5, 32 );
+var bottom = new THREE.CylinderGeometry( 14, 14, 2.5, 32 );
 
-bottom.translate(0,0,0)
+bottom.translate(0,-10,0)
 //var cuerpo = new THREE.SphereBufferGeometry(10,64,64);
 var cuerpo = new THREE.SphereGeometry(10,64,64);
 //var ojoi=new THREE.SphereBufferGeometry(10,32,32);
