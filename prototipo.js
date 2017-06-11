@@ -214,11 +214,11 @@ function setup(){
   mapa[8] = "CNBNBNBNBC";
   mapa[9] = "CCCCCCCCCC";
   var pieza = new Array();
-  pieza[0] = "   p      ";
+  pieza[0] = "          ";
   pieza[1] = "          ";
   pieza[2] = "          ";
   pieza[3] = "          ";
-  pieza[4] = "     p    ";
+  pieza[4] = "          ";
   pieza[5] = "          ";
   pieza[6] = "          ";
   pieza[7] = " p        ";
