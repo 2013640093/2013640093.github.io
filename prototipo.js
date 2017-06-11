@@ -230,7 +230,7 @@ function setup(){
   environment.setMapPiece( pieza );
   camara = new THREE.PerspectiveCamera( 30, window.innerWidth/window.innerHeight, .5, 1000 );
   camara.position.z =150;
-  camara.position.y = -10;
+  camara.position.y = -500;
   camara.lookAt( new THREE.Vector3( 0, 0, 0 ) );
   renderer = new THREE.WebGLRenderer();
   renderer.setSize( window.innerHeight*.95, window.innerHeight*.95 );
