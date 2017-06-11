@@ -4,7 +4,7 @@ var PROTOTIPO = new Object();
 PROTOTIPO.Peon = function(){
   THREE.Geometry.call( this );
   
-  var cabezaForma = new THREE.SphereGeometry( 0.3, 32, 32 );
+ /* var cabezaForma = new THREE.SphereGeometry( 0.3, 32, 32 );
   var troncoForma = new THREE.CylinderGeometry( 0.1, 0.3, 0.5 );
   var adornoForma = new THREE.TorusGeometry(0.3, 0.05, 16, 100);
   var discoForma = new THREE.CylinderGeometry( 0.3, 0.3, 0.1 );
@@ -23,9 +23,9 @@ PROTOTIPO.Peon = function(){
   this.merge( cabezaMalla.geometry, cabezaMalla.matrix );
   this.merge( adornoMalla.geometry, adornoMalla.matrix );
   this.merge( discoMalla.geometry, discoMalla.matrix );
-  this.merge( baseMalla.geometry, baseMalla.matrix );
+  this.merge( baseMalla.geometry, baseMalla.matrix );*/
   
-/*var cuerpo = new THREE.SphereGeometry(10,64,64);
+var cuerpo = new THREE.SphereGeometry(10,64,64);
 var ojoi=new THREE.SphereGeometry(2,32,32);
 ojoi.translate(-2,2,8);
 var ojod=new THREE.SphereGeometry(2,32,32);
@@ -57,17 +57,16 @@ var mallamecha =new THREE.Mesh( mecha);
 var mallabase =new THREE.Mesh( base);
 var mallapied =new THREE.Mesh( pied);
 var mallapiei =new THREE.Mesh( piei);
-
-var bomba = new THREE.Geometry();
-bomba.merge(mallacuerpo.geometry, mallacuerpo.matrix);
-bomba.merge(mallojoi.geometry, mallojoi.matrix);
-bomba.merge(mallojod.geometry, mallojod.matrix);
-bomba.merge(mallamecha.geometry, mallamecha.matrix);
-bomba.merge(mallabase.geometry, mallabase.matrix);
-bomba.merge( mallapied.geometry,  mallapied.matrix);
-bomba.merge( mallapiei.geometry,  mallapiei.matrix);
-var mallabomba = new THREE.Mesh(bomba);
-mallabomba.rotateY( Math.PI/4 );*/
+//var bomba = new THREE.Geometry();
+this.merge(mallacuerpo.geometry, mallacuerpo.matrix);
+this.merge(mallojoi.geometry, mallojoi.matrix);
+this.merge(mallojod.geometry, mallojod.matrix);
+this.merge(mallamecha.geometry, mallamecha.matrix);
+this.merge(mallabase.geometry, mallabase.matrix);
+this.merge( mallapied.geometry,  mallapied.matrix);
+this.merge( mallapiei.geometry,  mallapiei.matrix);
+var mallabomba = new THREE.Mesh(this);
+mallabomba.rotateY( Math.PI/4 );
  }
  
 PROTOTIPO.Peon.prototype = new THREE.Geometry();
@@ -184,7 +183,7 @@ Pieza.prototype = new Agent();
 
 function movement(event) { 
   var keyboard = event.which;  
-  var avance = 20;
+  var avance = 30;
   switch ( keyboard ){
     case 37:
       environment.children[100].position.x+=-avance;
