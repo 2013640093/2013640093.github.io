@@ -304,7 +304,7 @@ var mallojod =new THREE.Mesh( ojod, material);
 
 
 var bottom = new THREE.CylinderGeometry( 14, 14, 2.5, 32 );
-bottom.translate(0,-10,0)
+bottom.translate(0,0,0)
 var mallabot = new THREE.Mesh( bottom, material );
 
 
@@ -323,6 +323,7 @@ var mallazorro = new THREE.Mesh(zorro, matext);
 mallazorro.rotateY(Math.PI*2/3);
 //mallazorro.rotateY(Math.PI/2);
 var escena = new THREE.Scene();
+mallazorro.translate(0,0,0)
 escena.add( mallazorro );
 escena.add(mallabot);
 
