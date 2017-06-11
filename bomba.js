@@ -69,7 +69,7 @@ bomba.merge(mallabot.geometry, mallabot.matrix);
 var mallabomba = new THREE.Mesh(bomba, material);
 //mallabomba.rotateY( Math.PI/4);
 var escena = new THREE.Scene();
-mallabomba.scale.set(0.5,2,0.5);
+mallabomba.scale.set(0.5,0.5,0.5);
 escena.add(mallabomba);
 
 var camara = new THREE.PerspectiveCamera();
