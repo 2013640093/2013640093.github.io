@@ -127,7 +127,7 @@ escena.add(mallabomba);
 
 //////HONGO/////// 
  THREE.ImageUtils.crossOrigin = '';
- var texturah =THREE.ImageUtils.loadTexture('hong.jpg');
+ var texturah =THREE.ImageUtils.loadTexture('hong.png');
 var matexth = new THREE.MeshBasicMaterial({map: texturah});
 var geometry = new THREE.SphereGeometry( 10, 60, 60, Math.PI, Math.PI*2, 3*Math.PI/2);
 geometry.translate(0,5,0)
