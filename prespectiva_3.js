@@ -31,7 +31,7 @@ function Tabla(){
  
  THREE.ImageUtils.crossOrigin = '';
  var textura1 =THREE.ImageUtils.loadTexture('t1.jpg');
- var textura2 =THREE.ImageUtils.loadTexture('t2u.jpg');
+ var textura2 =THREE.ImageUtils.loadTexture('t3.jpg');
  var color=0;
     for(var i=0;i<8;i++){
       for(var j=0;j<8;j++){
