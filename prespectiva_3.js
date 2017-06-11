@@ -1,7 +1,4 @@
 
-
-
-
 //////////////////////////////// CREANDO ILUMINACIÓN///////////////////
 //var directionalLight = new THREE.DirectionalLight( 0xffffff, 1 );
 //directionalLight.position.y=20;
@@ -31,6 +28,10 @@ camara.lookAt(new THREE.Vector3(0,0,0));
 
 ///////////////TABLERO////////////////
 function Tabla(){
+ 
+ THREE.ImageUtils.crossOrigin = '';
+ var textura1 =THREE.ImageUtils.loadTexture('t1.gif');
+ var textura2 =THREE.ImageUtils.loadTexture('t2.gif');
  var color=0;
     for(var i=0;i<8;i++){
       for(var j=0;j<8;j++){
@@ -40,12 +41,12 @@ function Tabla(){
         cuboForma.translate(-95+i*30,0,95-j*30);
         if(color%2!==0){
           //var material = new THREE.MeshBasicMaterial({color: 0xcccccc});
-         var material = new THREE.MeshPhongMaterial({color: 0xcc0000});
+         var matext1 = new THREE.MeshBasicMaterial({map: textura1});
         }else{
           //var material = new THREE.MeshBasicMaterial({color: 0x555555});
-         var material = new THREE.MeshPhongMaterial({color: 0x004c99});
+         var matext1 = new THREE.MeshBasicMaterial({map: textura2});
         }
-        var cuboMalla = new THREE.Mesh(cuboForma,material);
+        var cuboMalla = new THREE.Mesh(cuboForma,matext1);
         color=color+1;
           //cuboMalla.rotateY( Math.PI/4 );
           //cuboMalla.rotateZ( Math.PI/8 );
@@ -55,6 +56,7 @@ function Tabla(){
       }
       color=color+1;
     }
+ 
 }
 /////////////BOMBA////////////////
 //var cuerpo = new THREE.SphereBufferGeometry(10,64,64);
