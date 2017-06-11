@@ -30,8 +30,8 @@ camara.lookAt(new THREE.Vector3(0,0,0));
 function Tabla(){
  
  THREE.ImageUtils.crossOrigin = '';
- var textura1 =THREE.ImageUtils.loadTexture('t1.gif');
- var textura2 =THREE.ImageUtils.loadTexture('t2.gif');
+ var textura1 =THREE.ImageUtils.loadTexture('t1.jpg');
+ var textura2 =THREE.ImageUtils.loadTexture('t2u.jpg');
  var color=0;
     for(var i=0;i<8;i++){
       for(var j=0;j<8;j++){
