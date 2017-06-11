@@ -16,14 +16,23 @@ var campoVision =50; //grados
 escena.add(spotLight);
 spotLight.castShadow = true;
 ///////////////////////////////////PERSPECTIVAS//////////////////////////////////////////////
+
 var relacionAspecto =window.innerWidth / window.innerHeight;
+var planoCercano =0.2;
+var planoLejano =1000;
+var camara = new THREE.PerspectiveCamera(campoVision,relacionAspecto,planoCercano,planoLejano);
+camara.position.x = 300;    
+camara.position.y = 500;
+camara.position.z = 300;   
+camara.lookAt(new THREE.Vector3(0,0,0));
+/*var relacionAspecto =window.innerWidth / window.innerHeight;
 var planoCercano =0.1;
 var planoLejano =1000;
 var camara = new THREE.PerspectiveCamera(campoVision,relacionAspecto,planoCercano,planoLejano);
 camara.position.x = 100;    
 camara.position.y = 40;
 camara.position.z = 200;   
-camara.lookAt(new THREE.Vector3(0,0,0));
+camara.lookAt(new THREE.Vector3(0,0,0));*/
 ///////////////////////////////////////////////
 
 ///////////////TABLERO////////////////
