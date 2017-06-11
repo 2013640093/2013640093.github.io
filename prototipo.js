@@ -67,7 +67,7 @@ this.merge( mallapied.geometry,  mallapied.matrix);
 this.merge( mallapiei.geometry,  mallapiei.matrix);
 var mallabomba = new THREE.Mesh(this);
 mallabomba.rotateY( Math.PI/4 );
-mallabomba.translate(0,2,0);
+mallabomba.translate(0,4,0);
  }
  
 PROTOTIPO.Peon.prototype = new THREE.Geometry();
@@ -114,7 +114,7 @@ Environment.prototype.act = function(){
 function CasillaB( size, x, y ){
   var cargador = new THREE.TextureLoader();
   textura = cargador.load( 'marmol_blanco.jpg' );
-  THREE.Mesh.call( this, new THREE.BoxGeometry( size, size, 2 ), new THREE.MeshLambertMaterial( {map: textura} ) );
+  THREE.Mesh.call( this, new THREE.BoxGeometry( size, size, .1 ), new THREE.MeshLambertMaterial( {map: textura} ) );
   this.size = size;
   this.position.x = x;
   this.position.y = y;
@@ -124,7 +124,7 @@ CasillaB.prototype = new THREE.Mesh();
 function CasillaN( size, x, y ){
   var cargador = new THREE.TextureLoader();
   textura = cargador.load( 'marmol_negro.jpg' );
-  THREE.Mesh.call( this, new THREE.BoxGeometry( size, size, 2 ), new THREE.MeshLambertMaterial( {map: textura} ) );
+  THREE.Mesh.call( this, new THREE.BoxGeometry( size, size, .1), new THREE.MeshLambertMaterial( {map: textura} ) );
   this.size = size;
   this.position.x = x;
   this.position.y = y;
@@ -134,7 +134,7 @@ CasillaN.prototype = new THREE.Mesh();
 function Contorno( size, x, y ){
   var cargador = new THREE.TextureLoader();
   textura = cargador.load( 'marmol_gris.jpg' );
-  THREE.Mesh.call( this, new THREE.BoxGeometry( size, size, 1 ), new THREE.MeshLambertMaterial( {map: textura} ) );
+  THREE.Mesh.call( this, new THREE.BoxGeometry( size, size, .2), new THREE.MeshLambertMaterial( {map: textura} ) );
   this.size = size;
   this.position.x = x;
   this.position.y = y;
@@ -221,9 +221,9 @@ function setup(){
   pieza[4] = "          ";
   pieza[5] = "          ";
   pieza[6] = "          ";
-  pieza[7] = " p        ";
+  pieza[7] = " p p      ";
   pieza[8] = "          ";
-  pieza[9] = "          ";
+  pieza[9] = " p        ";
   
   environment = new Environment();
   environment.setMap( mapa );
