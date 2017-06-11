@@ -4,30 +4,70 @@ var PROTOTIPO = new Object();
 PROTOTIPO.Peon = function(){
   THREE.Geometry.call( this );
   
-  var cabezaForma = new THREE.SphereGeometry( 0.3, 32, 32 );
+  /*var cabezaForma = new THREE.SphereGeometry( 0.3, 32, 32 );
   var troncoForma = new THREE.CylinderGeometry( 0.1, 0.3, 0.5 );
   var adornoForma = new THREE.TorusGeometry(0.3, 0.05, 16, 100);
   var discoForma = new THREE.CylinderGeometry( 0.3, 0.3, 0.1 );
   var baseForma = new THREE.CylinderGeometry( 0.3, 0.3, 0.125 );
-  
   cabezaForma.translate( 0, 0.5, 0 );
   adornoForma.rotateX(Math.PI/2);
   adornoForma.translate( 0, -0.25, 0 );
   discoForma.translate( 0, 0.25, 0 );
   baseForma.translate( 0, -0.3125, 0 );
-  
   var troncoMalla = new THREE.Mesh( troncoForma );
   var cabezaMalla = new THREE.Mesh( cabezaForma );
   var adornoMalla = new THREE.Mesh( adornoForma );
   var discoMalla = new THREE.Mesh( discoForma );
   var baseMalla = new THREE.Mesh( baseForma );
-  
-  
   this.merge( troncoMalla.geometry, troncoMalla.matrix );
   this.merge( cabezaMalla.geometry, cabezaMalla.matrix );
   this.merge( adornoMalla.geometry, adornoMalla.matrix );
   this.merge( discoMalla.geometry, discoMalla.matrix );
-  this.merge( baseMalla.geometry, baseMalla.matrix );
+  this.merge( baseMalla.geometry, baseMalla.matrix );*/
+  
+var cuerpo = new THREE.SphereGeometry(10,64,64);
+var ojoi=new THREE.SphereGeometry(2,32,32);
+ojoi.translate(-2,2,8);
+var ojod=new THREE.SphereGeometry(2,32,32);
+ojod.translate(2,2,8);
+var mecha = new THREE.CylinderGeometry( 1, 1, 8, 32 );
+mecha.translate(0,10,0);
+var base = new THREE.CylinderGeometry( 2, 2, 4, 32 );
+base.translate(0,10,0);
+var figura = new THREE.Shape();
+figura.moveTo(7, -6);
+figura.lineTo(7.3, -6);
+figura.lineTo(7.3, -6.1);
+figura.lineTo(7, -6.1);
+figura.lineTo(7, -6);
+var pied = new THREE.ExtrudeGeometry( figura,
+                                       {amount: 2} );
+var figura2 = new THREE.Shape();
+figura2.moveTo(-7, -6);
+figura2.lineTo(-7.3, -6);
+figura2.lineTo(-7.3, -6.1);
+figura2.lineTo(-7, -6.1);
+figura2.lineTo(-7, -6);
+var piei = new THREE.ExtrudeGeometry( figura2,
+                                       {amount: 2} );
+var mallacuerpo =new THREE.Mesh( cuerpo);
+var mallojoi =new THREE.Mesh( ojoi);
+var mallojod =new THREE.Mesh( ojod);
+var mallamecha =new THREE.Mesh( mecha);
+var mallabase =new THREE.Mesh( base);
+var mallapied =new THREE.Mesh( pied);
+var mallapiei =new THREE.Mesh( piei);
+
+var bomba = new THREE.Geometry();
+bomba.merge(mallacuerpo.geometry, mallacuerpo.matrix);
+bomba.merge(mallojoi.geometry, mallojoi.matrix);
+bomba.merge(mallojod.geometry, mallojod.matrix);
+bomba.merge(mallamecha.geometry, mallamecha.matrix);
+bomba.merge(mallabase.geometry, mallabase.matrix);
+bomba.merge( mallapied.geometry,  mallapied.matrix);
+bomba.merge( mallapiei.geometry,  mallapiei.matrix);
+var mallabomba = new THREE.Mesh(bomba);
+mallabomba.rotateY( Math.PI/4 );
  }
  
 PROTOTIPO.Peon.prototype = new THREE.Geometry();
@@ -106,11 +146,11 @@ Environment.prototype.setMap = function( map ){
   for ( var i = 0; i < map.length; i++ ){
     for ( var j = 0; j < map.length; j++ ){
       if ( map[i][j] === "B" )
-        this.add( new CasillaB( 10, -45+10*i, -45+10*j ) );
+        this.add( new CasillaB( 30, -95+30*i, -95+30*j ) );
       else if ( map[i][j] === "N" )
-        this.add( new CasillaN( 10, -45+10*i, -45+10*j ) );
+        this.add( new CasillaN( 30, -95+30*i, -95+30*j ) );
       else if ( map[i][j] === "C" )
-        this.add( new Contorno( 10, -45+10*i, -45+10*j ) );
+        this.add( new Contorno( 30, -95+30*i, -95+30*j ) );
       }
    }
  }
@@ -119,7 +159,7 @@ Environment.prototype.setMapPiece = function( map ){
   for( var i = 0; i < map.length; i++){
     for(var j = 0; j < map.length; j++){
       if( map[i][j] === "p")
-        this.add( new Pieza( -45+10*i, -45+10*j ) );
+        this.add( new Pieza( -95+30*i, -95+30*j ) );
     }
   }
 }
@@ -144,7 +184,7 @@ Pieza.prototype = new Agent();
 
 function movement(event) { 
   var keyboard = event.which;  
-  var avance = 0.5;
+  var avance = 20;
   switch ( keyboard ){
     case 37:
       environment.children[100].position.x+=-avance;
@@ -174,11 +214,11 @@ function setup(){
   mapa[8] = "CNBNBNBNBC";
   mapa[9] = "CCCCCCCCCC";
   var pieza = new Array();
-  pieza[0] = "          ";
+  pieza[0] = "   p      ";
   pieza[1] = "          ";
   pieza[2] = "          ";
   pieza[3] = "          ";
-  pieza[4] = "          ";
+  pieza[4] = "     p    ";
   pieza[5] = "          ";
   pieza[6] = "          ";
   pieza[7] = " p        ";
