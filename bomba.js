@@ -1,4 +1,4 @@
-var campoVision =50; //grados
+/*var campoVision =50; //grados
 var relacionAspecto =window.innerWidth / window.innerHeight;
 var planoCercano =0.2;
 var planoLejano =1000;
@@ -6,7 +6,7 @@ var camara = new THREE.PerspectiveCamera(campoVision,relacionAspecto,planoCercan
 camara.position.x = 50;    
 camara.position.y = 50;
 camara.position.z = 50;   
-camara.lookAt(new THREE.Vector3(0,0,0));
+camara.lookAt(new THREE.Vector3(0,0,0));*/
 
 
 
@@ -71,8 +71,8 @@ var mallabomba = new THREE.Mesh(bomba, material);
 var escena = new THREE.Scene();
 escena.add(mallabomba);
 
-/*var camara = new THREE.PerspectiveCamera();
-camara.position.z = 100;*/
+var camara = new THREE.PerspectiveCamera();
+camara.position.z = 100;
 
 var renderizador = new THREE.WebGLRenderer();
 renderizador.setSize( window.innerHeight*.95,
