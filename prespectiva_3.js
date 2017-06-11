@@ -76,9 +76,12 @@ function Tabla(){
 /////////////BOMBA////////////////
 //var cuerpo = new THREE.SphereBufferGeometry(10,64,64);
 //function BOMBA (){
+
  THREE.ImageUtils.crossOrigin = '';
  var textura =THREE.ImageUtils.loadTexture('bomb.jpg');
 var matext = new THREE.MeshBasicMaterial({map: textura});
+var bottom = new THREE.CylinderGeometry( 14, 14, 2.5, 32 );
+bottom.translate(0,-10,0)
 var cuerpo = new THREE.SphereGeometry(10,64,64);
 //var ojoi=new THREE.SphereBufferGeometry(10,32,32);
 var ojoi=new THREE.SphereGeometry(2,32,32);
@@ -118,6 +121,7 @@ var mallamecha =new THREE.Mesh( mecha, material1);
 var mallabase =new THREE.Mesh( base, material1);
 var mallapied =new THREE.Mesh( pied, material1);
 var mallapiei =new THREE.Mesh( piei, material1);
+var mallabot = new THREE.Mesh( bottom, material );
 
 var bomba = new THREE.Geometry();
 bomba.merge(mallacuerpo.geometry, mallacuerpo.matrix);
@@ -127,7 +131,8 @@ bomba.merge(mallamecha.geometry, mallamecha.matrix);
 bomba.merge(mallabase.geometry, mallabase.matrix);
 bomba.merge( mallapied.geometry,  mallapied.matrix);
 bomba.merge( mallapiei.geometry,  mallapiei.matrix);
-bomba.translate(-76,10,70);
+bomba.merge(mallabot.geometry, mallabot.matrix);
+bomba.translate(-76,20,70);
 var mallabomba = new THREE.Mesh(bomba, matext);
 //mallabomba.rotateY( Math.PI/12 );
 //mallabomba.rotateZ( Math.PI/4 );
