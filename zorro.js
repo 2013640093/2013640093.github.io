@@ -302,6 +302,12 @@ var mallojoi =new THREE.Mesh( ojoi, material);
 var mallojod =new THREE.Mesh( ojod, material);
 
 
+
+var bottom = new THREE.CylinderGeometry( 14, 14, 2.5, 32 );
+bottom.translate(0,-10,0)
+var mallabot = new THREE.Mesh( bottom, material );
+
+
 THREE.ImageUtils.crossOrigin = '';
  var textura =THREE.ImageUtils.loadTexture('blu.png');
 var matext = new THREE.MeshBasicMaterial({map: textura});
@@ -310,6 +316,7 @@ var zorro = new THREE.Geometry();
 zorro.merge(mallacuerpo.geometry, mallacuerpo.matrix);
 zorro.merge(mallojoi.geometry, mallojoi.matrix);
 zorro.merge(mallojod.geometry, mallojod.matrix);
+//zorro.merge(mallabot.geometry,mallabot.matrix);
 
 var mallazorro = new THREE.Mesh(zorro, matext);
 //mallazorro.rotateX(Math.PI/4);
@@ -317,6 +324,7 @@ mallazorro.rotateY(Math.PI*2/3);
 //mallazorro.rotateY(Math.PI/2);
 var escena = new THREE.Scene();
 escena.add( mallazorro );
+escena.add(mallabot);
 
 
 var camara = new THREE.PerspectiveCamera();
