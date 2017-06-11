@@ -304,7 +304,7 @@ var mallojod =new THREE.Mesh( ojod, material);
 
 
 var bottom = new THREE.CylinderGeometry( 14, 14, 2.5, 32 );
-bottom.translate(0,0,0)
+bottom.translate(0,-2.5,0)
 var mallabot = new THREE.Mesh( bottom, material );
 
 
