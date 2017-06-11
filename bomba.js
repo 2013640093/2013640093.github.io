@@ -75,7 +75,7 @@ mallabomba.scale.set(0.75,0.75,0.75);
 escena.add(mallabomba);
 
 var camara = new THREE.PerspectiveCamera();
-camara.position.z = 100;
+camara.position.z = 50;
 
 var renderizador = new THREE.WebGLRenderer();
 renderizador.setSize( window.innerHeight*.95,
