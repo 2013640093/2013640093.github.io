@@ -172,7 +172,7 @@ function Pieza( x, y ){
   this.position.z = 5;
   textura = cargador.load( 'marmol_blanco.jpg' );
   this.actuator = new THREE.Mesh( new PROTOTIPO.Peon(), new THREE.MeshLambertMaterial( {map: textura} ) );
-  this.actuator.scale.set( 7, 7, 7 );
+  this.actuator.scale.set( 1, 1, 1 );
   this.actuator.rotateX( Math.PI/2 );
   this.actuator.castShadow = true;
   this.add( this.actuator );
