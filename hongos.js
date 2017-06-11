@@ -1,5 +1,4 @@
 
-|
 var bottom = new THREE.CylinderGeometry( 14, 14, 2.5, 32 );
 bottom.translate(0,-10,0)
 var mallabot = new THREE.Mesh( bottom, material );
