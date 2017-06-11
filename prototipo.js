@@ -67,6 +67,7 @@ this.merge( mallapied.geometry,  mallapied.matrix);
 this.merge( mallapiei.geometry,  mallapiei.matrix);
 var mallabomba = new THREE.Mesh(this);
 mallabomba.rotateY( Math.PI/4 );
+mallabomba.translate(0,2,0);
  }
  
 PROTOTIPO.Peon.prototype = new THREE.Geometry();
