@@ -125,11 +125,13 @@ escena.add(mallabomba);
 
 
 
-//////HONGO///////
-function HONGO(){
+//////HONGO/////// 
+ THREE.ImageUtils.crossOrigin = '';
+ var texturah =THREE.ImageUtils.loadTexture('hong.jpg');
+var matexth = new THREE.MeshBasicMaterial({map: texturah});
 var geometry = new THREE.SphereGeometry( 10, 60, 60, Math.PI, Math.PI*2, 3*Math.PI/2);
 geometry.translate(0,5,0)
-var material = new THREE.MeshPhongMaterial( { color: 0xddddff } );
+var material = new THREE.MeshPhongMaterial();
 var sphere = new THREE.Mesh( geometry, material );
 var troncoForma = new THREE.CylinderGeometry(3, 6, 14);
 var troncoMalla = new THREE.Mesh(troncoForma);
@@ -166,13 +168,13 @@ hongoForma.merge(mallojod.geometry, mallojod.matrix);
 hongoForma.merge(mallapied.geometry, mallapied.matrix);
 hongoForma.merge(mallapiei.geometry, mallapiei.matrix);
 hongoForma.translate(-90,10,-80);
-var material2 = new THREE.MeshPhongMaterial();
-var mallahongoForma = new THREE.Mesh(hongoForma, material2);
+//var material2 = new THREE.MeshPhongMaterial();
+var mallahongoForma = new THREE.Mesh(hongoForma, matexth);
 mallahongoForma.rotateY( Math.PI);
 //mallahongoForma.rotateZ( Math.PI/4 );
 escena.add(mallahongoForma);
  mallahongoForma.castShadow = true;
-}
+
 
 
 
@@ -197,7 +199,23 @@ mallabomba.rotation.y += 0.00;
 renderizador.render(escena, camara);
 
 }
+
+function looph() 
+{
+requestAnimationFrame(looh);
+
+
+mallahongoForma.rotation.x += 0.00;
+
+mallahongoForma.rotation.y += 0.00;
+
+
+renderizador.render(escena, camara);
+
+}
+
 Tabla();
-HONGO();
+//HONGO();
 //BOMBA();
 loop2();
+looph();
