@@ -316,7 +316,7 @@ var zorro = new THREE.Geometry();
 zorro.merge(mallacuerpo.geometry, mallacuerpo.matrix);
 zorro.merge(mallojoi.geometry, mallojoi.matrix);
 zorro.merge(mallojod.geometry, mallojod.matrix);
-//zorro.merge(mallabot.geometry,mallabot.matrix);
+zorro.merge(mallabot.geometry,mallabot.matrix);
 zorro.translate(0,0,0)
 var mallazorro = new THREE.Mesh(zorro, matext);
 //mallazorro.rotateX(Math.PI/4);
@@ -325,7 +325,7 @@ mallazorro.rotateY(Math.PI*2/3);
 var escena = new THREE.Scene();
 
 escena.add( mallazorro );
-escena.add(mallabot);
+//escena.add(mallabot);
 
 
 var camara = new THREE.PerspectiveCamera();
