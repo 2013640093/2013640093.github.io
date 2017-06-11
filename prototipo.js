@@ -114,7 +114,7 @@ Environment.prototype.act = function(){
 function CasillaB( size, x, y ){
   var cargador = new THREE.TextureLoader();
   textura = cargador.load( 'marmol_blanco.jpg' );
-  THREE.Mesh.call( this, new THREE.BoxGeometry( size, size, size/2 ), new THREE.MeshLambertMaterial( {map: textura} ) );
+  THREE.Mesh.call( this, new THREE.BoxGeometry( size, size, 2 ), new THREE.MeshLambertMaterial( {map: textura} ) );
   this.size = size;
   this.position.x = x;
   this.position.y = y;
@@ -124,7 +124,7 @@ CasillaB.prototype = new THREE.Mesh();
 function CasillaN( size, x, y ){
   var cargador = new THREE.TextureLoader();
   textura = cargador.load( 'marmol_negro.jpg' );
-  THREE.Mesh.call( this, new THREE.BoxGeometry( size, size, size/2 ), new THREE.MeshLambertMaterial( {map: textura} ) );
+  THREE.Mesh.call( this, new THREE.BoxGeometry( size, size, 2 ), new THREE.MeshLambertMaterial( {map: textura} ) );
   this.size = size;
   this.position.x = x;
   this.position.y = y;
@@ -134,7 +134,7 @@ CasillaN.prototype = new THREE.Mesh();
 function Contorno( size, x, y ){
   var cargador = new THREE.TextureLoader();
   textura = cargador.load( 'marmol_gris.jpg' );
-  THREE.Mesh.call( this, new THREE.BoxGeometry( size, size, size ), new THREE.MeshLambertMaterial( {map: textura} ) );
+  THREE.Mesh.call( this, new THREE.BoxGeometry( size, size, 1 ), new THREE.MeshLambertMaterial( {map: textura} ) );
   this.size = size;
   this.position.x = x;
   this.position.y = y;
@@ -229,8 +229,8 @@ function setup(){
   environment.setMap( mapa );
   environment.setMapPiece( pieza );
   camara = new THREE.PerspectiveCamera( 40, window.innerWidth/window.innerHeight, 1, 1000 );
-  camara.position.z =300;
-  camara.position.y = -500;
+  camara.position.z =250;
+  camara.position.y = -400;
   camara.lookAt( new THREE.Vector3( 0, 0, 0 ) );
   renderer = new THREE.WebGLRenderer();
   renderer.setSize( window.innerHeight*.95, window.innerHeight*.95 );
