@@ -216,15 +216,15 @@ function setup(){
   mapa[9] = "CCCCCCCCCC";
   var pieza = new Array();
   pieza[0] = "          ";
-  pieza[1] = "          ";
-  pieza[2] = "          ";
+  pieza[1] = " p p p p p";
+  pieza[2] = "  p p p p ";
   pieza[3] = "          ";
   pieza[4] = "          ";
   pieza[5] = "          ";
   pieza[6] = "          ";
-  pieza[7] = " p p      ";
-  pieza[8] = "          ";
-  pieza[9] = " p        ";
+  pieza[7] = "  p p p p ";
+  pieza[8] = " p p p p p";
+  pieza[9] = "          ";
   
   environment = new Environment();
   environment.setMap( mapa );
