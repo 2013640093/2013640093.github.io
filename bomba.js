@@ -87,9 +87,9 @@ function loop()
 {
   
   requestAnimationFrame(loop)
-mallabomba.rotation.x += 0.00;
+mallabomba.rotation.x += 0.01;
 
-mallabomba.rotation.y += 0.00;
+mallabomba.rotation.y += 0.01;
 
 
 renderizador.render(escena, camara);
