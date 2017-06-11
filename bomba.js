@@ -9,7 +9,7 @@ camara.position.z = 50;
 camara.lookAt(new THREE.Vector3(0,0,0));*/
 
  THREE.ImageUtils.crossOrigin = '';
- var textura =THREE.ImageUtils.loadTexture('bomb.jpg');
+ var textura =THREE.ImageUtils.loadTexture('blu.png');
 var matext = new THREE.MeshBasicMaterial({map: textura});
 
 var bottom = new THREE.CylinderGeometry( 14, 14, 2.5, 32 );
