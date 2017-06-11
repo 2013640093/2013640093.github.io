@@ -132,7 +132,7 @@ bomba.merge(mallabase.geometry, mallabase.matrix);
 bomba.merge( mallapied.geometry,  mallapied.matrix);
 bomba.merge( mallapiei.geometry,  mallapiei.matrix);
 bomba.merge(mallabot.geometry, mallabot.matrix);
-bomba.translate(-67,12.5,66);
+bomba.translate(-37,12.5,66);
 var mallabomba = new THREE.Mesh(bomba, matext);
 //mallabomba.rotateY( Math.PI/12 );
 //mallabomba.rotateZ( Math.PI/4 );
