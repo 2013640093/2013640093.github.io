@@ -128,6 +128,7 @@ var material3 = new THREE.MeshNormalMaterial();
 var mallapingui = new THREE.Mesh( pingui, matext );
 mallapingui.rotateY( Math.PI/8 );
 var escena = new THREE.Scene();
+mallapingui.scale.set(0.75,0.75,0.75);
 escena.add(mallapingui);
 
 
@@ -150,9 +151,9 @@ function loop()
 requestAnimationFrame(loop);
 
 
-mallapingui.rotation.x += 0.00;
+mallapingui.rotation.x += 0.01;
 
-mallapingui.rotation.y += 0.00;
+mallapingui.rotation.y += 0.01;
 
 
 renderizador.render(escena, camara);
