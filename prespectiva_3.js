@@ -1,15 +1,24 @@
+
+
+
+
+//////////////////////////////// CREANDO ILUMINACIÓN///////////////////
 //var directionalLight = new THREE.DirectionalLight( 0xffffff, 1 );
 //directionalLight.position.y=20;
 //directionalLight.position.z=30;
 
 //var iluminacion = new THREE.PointLight(0xF932D2);
 //iluminacion.position.y=200;
-
 var spotLight = new THREE.SpotLight( 0xffffff );
 spotLight.position.y=200;
 var campoVision =50; //grados
 //var campoVision =90; //grados
 //var campoVision =20; //grados
+
+ var escena = new THREE.Scene();
+escena.add(spotLight);
+spotLight.castShadow = true;
+///////////////////////////////////PERSPECTIVAS//////////////////////////////////////////////
 var relacionAspecto =window.innerWidth / window.innerHeight;
 var planoCercano =0.1;
 var planoLejano =1000;
@@ -18,10 +27,7 @@ camara.position.x = 100;
 camara.position.y = 40;
 camara.position.z = 200;   
 camara.lookAt(new THREE.Vector3(0,0,0));
-//////////////////
- var escena = new THREE.Scene();
-escena.add(spotLight);
-spotLight.castShadow = true;
+///////////////////////////////////////////////
 
 ///////////////TABLERO////////////////
 function Tabla(){
