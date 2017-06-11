@@ -8,7 +8,9 @@ camara.position.y = 50;
 camara.position.z = 50;   
 camara.lookAt(new THREE.Vector3(0,0,0));*/
 
-
+ THREE.ImageUtils.crossOrigin = '';
+ var textura =THREE.ImageUtils.loadTexture('bomb.jpg');
+var matext = new THREE.MeshBasicMaterial({map: textura});
 
 var bottom = new THREE.CylinderGeometry( 14, 14, 2.5, 32 );
 
@@ -66,7 +68,7 @@ bomba.merge( mallapied.geometry,  mallapied.matrix);
 bomba.merge( mallapiei.geometry,  mallapiei.matrix);
 bomba.merge(mallabot.geometry, mallabot.matrix);
 
-var mallabomba = new THREE.Mesh(bomba, material);
+var mallabomba = new THREE.Mesh(bomba, matext);
 //mallabomba.rotateY( Math.PI/4);
 var escena = new THREE.Scene();
 mallabomba.scale.set(0.75,0.75,0.75);
@@ -80,3 +82,15 @@ renderizador.setSize( window.innerHeight*.95,
                       window.innerHeight*.95 );
 document.body.appendChild( renderizador.domElement );
 renderizador.render( escena, camara );
+
+loop(){
+  
+  requestAnimationFrame(loop)
+mallabomba.rotation.x += 0.00;
+
+mallabomba.rotation.y += 0.00;
+
+
+renderizador.render(escena, camara);
+
+}
