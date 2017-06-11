@@ -341,9 +341,9 @@ function loop()
 {
   
   requestAnimationFrame(loop)
-mallazorro.rotation.x += 0.01;
+mallazorro.rotation.x += 0.00;
 
-mallazorro.rotation.y += 0.01;
+mallazorro.rotation.y += 0.00;
 
 
 renderizador.render(escena, camara);
