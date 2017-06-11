@@ -22,7 +22,7 @@ var planoLejano =1000;
 var camara = new THREE.PerspectiveCamera(campoVision,relacionAspecto,planoCercano,planoLejano);
 camara.position.x = 100;    
 camara.position.y = 40;
-camara.position.z = 200;   
+camara.position.z = -200;   
 camara.lookAt(new THREE.Vector3(0,0,0));
 ///////////////////////////////////////////////
 
@@ -112,7 +112,7 @@ bomba.merge(mallamecha.geometry, mallamecha.matrix);
 bomba.merge(mallabase.geometry, mallabase.matrix);
 bomba.merge( mallapied.geometry,  mallapied.matrix);
 bomba.merge( mallapiei.geometry,  mallapiei.matrix);
-bomba.translate(-80,10,70);
+bomba.translate(-65,10,70);
 var mallabomba = new THREE.Mesh(bomba, matext);
 //mallabomba.rotateY( Math.PI/12 );
 //mallabomba.rotateZ( Math.PI/4 );
