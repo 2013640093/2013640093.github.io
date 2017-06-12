@@ -1,30 +1,8 @@
-/*PEÓN*/
+/////////////////GEOMETRIAS//////////////////////
 var PROTOTIPO = new Object();
-
+/*CONSTRUCTOR DE BOMBA*/
 PROTOTIPO.Peon = function(){
-  THREE.Geometry.call( this );
-  
- /* var cabezaForma = new THREE.SphereGeometry( 0.3, 32, 32 );
-  var troncoForma = new THREE.CylinderGeometry( 0.1, 0.3, 0.5 );
-  var adornoForma = new THREE.TorusGeometry(0.3, 0.05, 16, 100);
-  var discoForma = new THREE.CylinderGeometry( 0.3, 0.3, 0.1 );
-  var baseForma = new THREE.CylinderGeometry( 0.3, 0.3, 0.125 );
-  cabezaForma.translate( 0, 0.5, 0 );
-  adornoForma.rotateX(Math.PI/2);
-  adornoForma.translate( 0, -0.25, 0 );
-  discoForma.translate( 0, 0.25, 0 );
-  baseForma.translate( 0, -0.3125, 0 );
-  var troncoMalla = new THREE.Mesh( troncoForma );
-  var cabezaMalla = new THREE.Mesh( cabezaForma );
-  var adornoMalla = new THREE.Mesh( adornoForma );
-  var discoMalla = new THREE.Mesh( discoForma );
-  var baseMalla = new THREE.Mesh( baseForma );
-  this.merge( troncoMalla.geometry, troncoMalla.matrix );
-  this.merge( cabezaMalla.geometry, cabezaMalla.matrix );
-  this.merge( adornoMalla.geometry, adornoMalla.matrix );
-  this.merge( discoMalla.geometry, discoMalla.matrix );
-  this.merge( baseMalla.geometry, baseMalla.matrix );*/
-  
+  THREE.Geometry.call( this ); 
 var cuerpo = new THREE.SphereGeometry(10,64,64);
 cuerpo.translate(0,2,0);
 var ojoi=new THREE.SphereGeometry(2,32,32);
@@ -41,16 +19,14 @@ figura.lineTo(7.3, -6);
 figura.lineTo(7.3, -6.1);
 figura.lineTo(7, -6.1);
 figura.lineTo(7, -6);
-var pied = new THREE.ExtrudeGeometry( figura,
-                                       {amount: 2} );
+var pied = new THREE.ExtrudeGeometry( figura, {amount: 2} );
 var figura2 = new THREE.Shape();
 figura2.moveTo(-7, -6);
 figura2.lineTo(-7.3, -6);
 figura2.lineTo(-7.3, -6.1);
 figura2.lineTo(-7, -6.1);
 figura2.lineTo(-7, -6);
-var piei = new THREE.ExtrudeGeometry( figura2,
-                                       {amount: 2} );
+var piei = new THREE.ExtrudeGeometry( figura2,{amount: 2} );
 var mallacuerpo =new THREE.Mesh( cuerpo);
 var mallojoi =new THREE.Mesh( ojoi);
 var mallojod =new THREE.Mesh( ojod);
@@ -58,7 +34,6 @@ var mallamecha =new THREE.Mesh( mecha);
 var mallabase =new THREE.Mesh( base);
 var mallapied =new THREE.Mesh( pied);
 var mallapiei =new THREE.Mesh( piei);
-//var bomba = new THREE.Geometry();
 this.merge(mallacuerpo.geometry, mallacuerpo.matrix);
 this.merge(mallojoi.geometry, mallojoi.matrix);
 this.merge(mallojod.geometry, mallojod.matrix);
@@ -70,11 +45,200 @@ var mallabomba = new THREE.Mesh(this);
 mallabomba.rotateY( Math.PI/4 );
 mallabomba.translate(0,4,0);
  }
- 
+/*CONSTRUCTOR DE HONGO*/ 
+PROTOTIPO.Hongo = function(){
+  THREE.Geometry.call( this );
+  var troncoForma = new THREE.CylinderGeometry(3, 6, 14);
+var troncoMalla = new THREE.Mesh(troncoForma);
+troncoMalla.position.set(0, 6, 0);
+var ojoi=new THREE.SphereGeometry(1,32,32);
+ojoi.translate(-2.5,9,9);
+var bottom = new THREE.CylinderGeometry( 14, 14, 2.5, 32 );
+bottom.translate(0,-10,0)
+var ojod=new THREE.SphereGeometry(1,32,32);
+ojod.translate(2.5,9,9);
+var figura = new THREE.Shape();
+figura.moveTo(6, -7);
+figura.lineTo(6.2, -7);
+figura.lineTo(6.2, -7.05);
+figura.lineTo(6, -7.05);
+figura.lineTo(6, -7);
+var pied = new THREE.ExtrudeGeometry( figura, {amount: .75} );
+var figura2 = new THREE.Shape();
+figura2.moveTo(-6, -7);
+figura2.lineTo(-6.2, -7);
+figura2.lineTo(-6.2, -7.05);
+figura2.lineTo(-6, -7.05);
+figura2.lineTo(-6, -7);
+var piei = new THREE.ExtrudeGeometry( figura2, {amount: 0.75} );
+var mallapiei =new THREE.Mesh( piei);
+var mallapied =new THREE.Mesh( pied);
+var mallojoi =new THREE.Mesh( ojoi);
+var mallojod =new THREE.Mesh( ojod); 
+var mallabot = new THREE.Mesh( bottom);
+this.merge(sphere.geometry, sphere.matrix);
+this.merge(troncoMalla.geometry, troncoMalla.matrix);
+this.merge(mallojoi.geometry, mallojoi.matrix);
+this.merge(mallojod.geometry, mallojod.matrix);
+this.merge(mallapied.geometry, mallapied.matrix);
+this.merge(mallapiei.geometry, mallapiei.matrix);
+this.merge(mallabot.geometry, mallabot.matrix);
+/*var escena = new THREE.Scene();
+mallahongoForma.scale.set(0.75,0.75,0.75);
+escena.add(mallahongoForma);*/
+}
+/*CONSTRUCTOR DE HUEVO*/ 
+PROTOTIPO.Huevo= function(){
+  THREE.Geometry.call( this );
+  var points = [];
+for ( var deg = 0; deg <= 180; deg += 6 ) {
+    var rad = Math.PI * deg / 180;
+    var point = new THREE.Vector2( ( 10*0.72 + 10*.08 * Math.cos( rad ) ) * Math.sin( rad ), - 10*Math.cos( rad ) ); // the "egg equation"
+    points.push( point );}
+geometry = new THREE.LatheGeometry( points, 32 );
+var bottom = new THREE.CylinderGeometry( 14, 14, 2.5, 32 );
+bottom.translate(0,-10,0)
+var ojoi=new THREE.SphereGeometry(0.75,32,32);
+ojoi.translate(-1.5,7,5);
+var ojod=new THREE.SphereGeometry(0.75,32,32);
+ojod.translate(1.5,7,5);
+var mallojod =new THREE.Mesh( ojod);
+var mallojoi =new THREE.Mesh( ojoi);  
+var mallabot = new THREE.Mesh( bottom);
+var Ovo = new THREE.Mesh( geometry);
+Ovo.position.set(0, 0, 0);
+this.merge(Ovo.geometry, Ovo.matrix);
+this.merge(mallojoi.geometry, mallojoi.matrix);
+this.merge(mallojod.geometry, mallojod.matrix);
+this.merge(mallabot.geometry, mallabot.matrix);
+var mallahuevo = new THREE.Mesh(this);
+mallahuevo.rotateY( Math.PI/8 );
+/*mallahuevo.scale.set(0.75,0.75,0.75);
+escena.add(mallahuevo);*/
+}
+/*CONSTRUCTOR DE HADA*/ 
+PROTOTIPO.Hada = function(){  
+THREE.Geometry.call( this );
+var geometry = new THREE.SphereGeometry( 10, 32, 32 );
+var bottom = new THREE.CylinderGeometry( 28, 28, 2.5, 32 );
+bottom.translate(0,-10,0);
+var figura = new THREE.Shape();
+figura.moveTo(8,8);
+figura.lineTo(27.5,15);
+figura.lineTo(30,25);
+figura.lineTo(8.75,11.25);
+figura.lineTo(8,8);
+var forma = new THREE.ExtrudeGeometry( figura,{amount: 1} );
+var figurai = new THREE.Shape();
+figurai.moveTo(-8,8);
+figurai.lineTo(-25,10);
+figurai.lineTo(-30,25);
+figurai.lineTo(-8.75,11.25);
+figurai.lineTo(-8,8);
+var formai = new THREE.ExtrudeGeometry( figurai, {amount: 1} );
+var malla = new THREE.Mesh( forma, material );
+var mallai = new THREE.Mesh( formai, material );
+var sphere = new THREE.Mesh( geometry, material );
+var mallabot = new THREE.Mesh( bottom, material );
+mallai.scale.set(0.5,0.5,0.5)
+malla.scale.set(0.5,0.5,0.5)
+this.merge(sphere.geometry, sphere.matrix);
+this.merge(malla.geometry, malla.matrix);
+this.merge(mallai.geometry, mallai.matrix);
+this.merge(mallabot.geometry, mallabot.matrix);
+var material3 = new THREE.MeshNormalMaterial();
+var mallahada = new THREE.Mesh(this);
+//mallahada.rotateY( Math.PI/8 );
+/*var escena = new THREE.Scene();
+mallahada.scale.set(0.5,0.5,0.5)*/
+
+}
+/*CONSTRUCTOR DE PINGUIN*/ 
+PROTOTIPO.Pinguin = function(){
+  THREE.Geometry.call( this ); 
+var points = [];
+for ( var deg = 0; deg <= 180; deg += 6 ) {
+    var rad = Math.PI * deg / 180;
+    var point = new THREE.Vector2( ( 10*0.72 + 10*.08 * Math.cos( rad ) ) * Math.sin( rad ), - 10*Math.cos( rad ) ); // the "egg equation"
+    points.push( point );}
+  geometry = new THREE.LatheGeometry( points, 32 ); 
+var bottom = new THREE.CylinderGeometry( 14, 14, 2.5, 32 );
+bottom.translate(0,-10,0) 
+var ojoi=new THREE.SphereGeometry(0.75,32,32);
+ojoi.translate(-1.5,12,5);
+var ojod=new THREE.SphereGeometry(0.75,32,32);
+ojod.translate(1.5,12,5);
+var ojos=new THREE.SphereGeometry(5,32,32);
+ojos.translate(0,12,0);
+var forma = new THREE.Geometry();
+forma.vertices.push( new THREE.Vector3( 1,  9,  5 ) ); // Vértice 0
+forma.vertices.push( new THREE.Vector3( 1,  10.5, 5 ) ); // Vértice 1
+forma.vertices.push( new THREE.Vector3(-1,  10.5, 5 ) ); // Vértice 2
+forma.vertices.push( new THREE.Vector3(-1,  9,  5 ) ); // Vértice 3
+forma.vertices.push( new THREE.Vector3( 0,  9.75,  7.5 ) ); // Vértice 4
+forma.faces.push( new THREE.Face3( 3, 2, 1 ) ); // Cara 0
+forma.faces.push( new THREE.Face3( 3, 1, 0 ) ); // Cara 1
+forma.faces.push( new THREE.Face3( 3, 0, 4 ) ); // Cara 2
+forma.faces.push( new THREE.Face3( 0, 1, 4 ) ); // Cara 3
+forma.faces.push( new THREE.Face3( 1, 2, 4 ) ); // Cara 4
+forma.faces.push( new THREE.Face3( 2, 3, 4 ) ); // Cara 5
+forma.computeBoundingSphere();
+forma.computeFaceNormals();
+var figura = new THREE.Shape();
+figura.moveTo(6, -7);
+figura.lineTo(6.1, -7);
+figura.lineTo(6.1, -7.05);
+figura.lineTo(6, -7.05);
+figura.lineTo(6, -7);
+var pied = new THREE.ExtrudeGeometry( figura, {amount: .75} );
+var figura2 = new THREE.Shape();
+figura2.moveTo(-6, -7);
+figura2.lineTo(-6.1, -7);
+figura2.lineTo(-6.1, -7.05);
+figura2.lineTo(-6, -7.05);
+figura2.lineTo(-6, -7);
+var piei = new THREE.ExtrudeGeometry( figura2, {amount: 0.75} );
+
+var mallojos =new THREE.Mesh( ojos);
+var mallojoi =new THREE.Mesh( ojoi);
+var mallojod =new THREE.Mesh( ojod);
+var mallapiei =new THREE.Mesh( piei);
+var mallapied =new THREE.Mesh( pied);
+var mallapic = new THREE.Mesh( forma);
+var mallabot = new THREE.Mesh( bottom);
+var Ovo = new THREE.Mesh( geometry);
+Ovo.position.set(0, 0, 0); 
+  
+this.merge(Ovo.geometry, Ovo.matrix);
+this.merge(mallojos.geometry, mallojos.matrix);
+this.merge(mallojod.geometry, mallojod.matrix);
+this.merge(mallojoi.geometry, mallojoi.matrix);
+this.merge(mallapic.geometry, mallapic.matrix);
+this.merge(mallapiei.geometry, mallapiei.matrix);
+this.merge(mallapied.geometry, mallapied.matrix);
+this.merge(mallabot.geometry, mallabot.matrix);
+var mallapingui = new THREE.Mesh( this);
+mallapingui.rotateY( Math.PI/8 );
+/*mallapingui.scale.set(0.75,0.75,0.75);
+escena.add(mallapingui);*/ 
+}
+
+/*CONSTRUCTOR DE ZORRO*/ 
+PROTOTIPO.Zorro = function(){
+  THREE.Geometry.call( this ); 
+  
+  
+  
+  
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
 PROTOTIPO.Peon.prototype = new THREE.Geometry();
 /*CONSTRUCCIÓN DEL AGENTE*/
 function Agent( x=0, y=0 ){
-  THREE.Object3D.call( this );
+  THREE.Object3
+  
+  D.call( this );
   this.position.x = x;
   this.position.y = y;
   }
