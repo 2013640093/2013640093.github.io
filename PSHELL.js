@@ -227,28 +227,29 @@ escena.add(mallapingui);*/
 PROTOTIPO.Zorro = function(){
   THREE.Geometry.call( this ); 
   
-  
-  
-  
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 PROTOTIPO.Peon.prototype = new THREE.Geometry();
+PROTOTIPO.Hada.prototype = new THREE.Geometry();
+PROTOTIPO.Huevo.prototype = new THREE.Geometry();
+PROTOTIPO.Hongo.prototype = new THREE.Geometry();
+PROTOTIPO.Pinguin.prototype = new THREE.Geometry();
+PROTOTIPO.Zorro.prototype = new THREE.Geometry();
+///////////////////////////////////////////////////////////////////////////////////
 /*CONSTRUCCIÓN DEL AGENTE*/
 function Agent( x=0, y=0 ){
   THREE.Object3
-  
   D.call( this );
   this.position.x = x;
   this.position.y = y;
   }
-
 Agent.prototype = new THREE.Object3D();
 
 Agent.prototype.sense = function(environment) {};
 Agent.prototype.plan = function(environment) {};
 Agent.prototype.act = function(environment) {};
-
+/////////////////////////////////////////////Ambiente///////////// ///////////////
 function Environment(){
   THREE.Scene.call( this );
   }
@@ -319,17 +320,17 @@ Environment.prototype.setMap = function( map ){
       }
    }
  }
-
+/*PIEZAS*/
 Environment.prototype.setMapPiece = function( map ){
   for( var i = 0; i < map.length; i++){
     for(var j = 0; j < map.length; j++){
       if( map[i][j] === "p")
-        this.add( new Pieza( -95+30*i, -95+30*j ) );
+        this.add( new BOMBA( -95+30*i, -95+30*j ) );
     }
   }
 }
-
-function Pieza( x, y ){
+/*FUNCIONES DE PIEZAS*/
+function BOMBA(T, x, y ){
   Agent.call( this, x, y );
   var cargador = new THREE.TextureLoader();
   this.castShadow = true;
@@ -344,9 +345,82 @@ function Pieza( x, y ){
   this.add( this.actuator );
   document.addEventListener("keydown", movement, false);
   }
-  
-Pieza.prototype = new Agent();
+  BOMBA.prototype = new Agent();
+////////
+function HONGO(T, x, y ){
+  Agent.call( this, x, y );
+  var cargador = new THREE.TextureLoader();
+  this.castShadow = true;
+  this.position.x = x;
+  this.position.y = y;
+  this.position.z = 5;
+  textura = cargador.load( 'marmol_blanco.jpg' );
+  this.actuator = new THREE.Mesh( new PROTOTIPO.Hongo(), new THREE.MeshLambertMaterial( {map: textura} ) );
+  this.actuator.scale.set( 1, 1, 1 );
+  this.actuator.rotateX( Math.PI/2 );
+   this.actuator.castShadow = true;
+  this.add( this.actuator );
+  document.addEventListener("keydown", movement, false);
+  }
+  HONGO.prototype = new Agent();
+////////
+function HADA(T, x, y ){
+  Agent.call( this, x, y );
+  var cargador = new THREE.TextureLoader();
+  this.castShadow = true;
+  this.position.x = x;
+  this.position.y = y;
+  this.position.z = 5;
+  textura = cargador.load( 'marmol_blanco.jpg' );
+  this.actuator = new THREE.Mesh( new PROTOTIPO.Hada(), new THREE.MeshLambertMaterial( {map: textura} ) );
+  this.actuator.scale.set( 1, 1, 1 );
+  this.actuator.rotateX( Math.PI/2 );
+   this.actuator.castShadow = true;
+  this.add( this.actuator );
+  document.addEventListener("keydown", movement, false);
+  }
+  HADA.prototype = new Agent();
+///////
+function PINGUIN(T, x, y ){
+  Agent.call( this, x, y );
+  var cargador = new THREE.TextureLoader();
+  this.castShadow = true;
+  this.position.x = x;
+  this.position.y = y;
+  this.position.z = 5;
+  textura = cargador.load( 'marmol_blanco.jpg' );
+  this.actuator = new THREE.Mesh( new PROTOTIPO.Pinguin(), new THREE.MeshLambertMaterial( {map: textura} ) );
+  this.actuator.scale.set( 1, 1, 1 );
+  this.actuator.rotateX( Math.PI/2 );
+   this.actuator.castShadow = true;
+  this.add( this.actuator );
+  document.addEventListener("keydown", movement, false);
+  }
+  PINGUIN.prototype = new Agent();
+///////
+function HUEVO(T, x, y ){
+  Agent.call( this, x, y );
+  var cargador = new THREE.TextureLoader();
+  this.castShadow = true;
+  this.position.x = x;
+  this.position.y = y;
+  this.position.z = 5;
+  textura = cargador.load( 'marmol_blanco.jpg' );
+  this.actuator = new THREE.Mesh( new PROTOTIPO.Huevo(), new THREE.MeshLambertMaterial( {map: textura} ) );
+  this.actuator.scale.set( 1, 1, 1 );
+  this.actuator.rotateX( Math.PI/2 );
+   this.actuator.castShadow = true;
+  this.add( this.actuator );
+  document.addEventListener("keydown", movement, false);
+  }
+  HUEVO.prototype = new Agent();
+///////
 
+
+
+
+
+/*EVENTOS*/
 function movement(event) { 
   var keyboard = event.which;  
   var avance = 30;
