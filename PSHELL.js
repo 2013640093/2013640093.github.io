@@ -107,7 +107,7 @@ var ojod=new THREE.SphereGeometry(0.75,32,32);
 ojod.translate(1.5,7,5);
 var mallojod =new THREE.Mesh( ojod);
 var mallojoi =new THREE.Mesh( ojoi);  
-var mallabot = new THREE.Mesh( bottom);
+//var mallabot = new THREE.Mesh( bottom);
 var Ovo = new THREE.Mesh( geometry);
 Ovo.position.set(0, 0, 0);
 this.merge(Ovo.geometry, Ovo.matrix);
@@ -219,7 +219,7 @@ this.merge(mallojoi.geometry, mallojoi.matrix);
 this.merge(mallapic.geometry, mallapic.matrix);
 this.merge(mallapiei.geometry, mallapiei.matrix);
 this.merge(mallapied.geometry, mallapied.matrix);
-this.merge(mallabot.geometry, mallabot.matrix);
+//this.merge(mallabot.geometry, mallabot.matrix);
 var mallapingui = new THREE.Mesh( this);
 mallapingui.rotateY( Math.PI/8 );
 /*mallapingui.scale.set(0.75,0.75,0.75);
@@ -263,9 +263,9 @@ var ojoi=new THREE.SphereGeometry(0.5,32,32);
 ojoi.translate(2.5,6,9);
 var ojod=new THREE.SphereGeometry(0.5,32,32);
 ojod.translate(-2.5,6,9);
-var bottom = new THREE.CylinderGeometry( 14, 14, 2.5, 32 );
-bottom.translate(0,-13.25,0)
-var mallabot = new THREE.Mesh( bottom);
+//var bottom = new THREE.CylinderGeometry( 14, 14, 2.5, 32 );
+//bottom.translate(0,-13.25,0)
+//var mallabot = new THREE.Mesh( bottom);
 var mallojod =new THREE.Mesh( ojod);
 var mallojoi =new THREE.Mesh( ojoi,);
 var cube15 = new THREE.Mesh( geometry15);
@@ -300,7 +300,7 @@ this .merge(cube14.geometry, cube12.matrix);
 this .merge(cube15.geometry, cube12.matrix);
 this .merge(mallojoi.geometry, mallojoi.matrix);
 this .merge(mallojod.geometry, mallojod.matrix);
-this .merge(mallabot.geometry, mallabot.matrix);  
+//this .merge(mallabot.geometry, mallabot.matrix);  
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
