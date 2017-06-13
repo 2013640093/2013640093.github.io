@@ -136,10 +136,10 @@ figurai.lineTo(-30,25);
 figurai.lineTo(-8.75,11.25);
 figurai.lineTo(-8,8);
 var formai = new THREE.ExtrudeGeometry( figurai, {amount: 1} );
-var malla = new THREE.Mesh( forma, material );
-var mallai = new THREE.Mesh( formai, material );
-var sphere = new THREE.Mesh( geometry, material );
-var mallabot = new THREE.Mesh( bottom, material );
+var malla = new THREE.Mesh( forma);
+var mallai = new THREE.Mesh( formai);
+var sphere = new THREE.Mesh( geometry);
+var mallabot = new THREE.Mesh( bottom);
 mallai.scale.set(0.5,0.5,0.5)
 malla.scale.set(0.5,0.5,0.5)
 this.merge(sphere.geometry, sphere.matrix);
