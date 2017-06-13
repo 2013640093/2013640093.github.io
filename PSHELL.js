@@ -142,7 +142,7 @@ var formai = new THREE.ExtrudeGeometry( figurai, {amount: 1} );
 var malla = new THREE.Mesh( forma);
 var mallai = new THREE.Mesh( formai);
 var sphere = new THREE.Mesh( geometry);
-var mallabot = new THREE.Mesh( bottom);
+//var mallabot = new THREE.Mesh( bottom);
 mallai.scale.set(0.5,0.5,0.5)
 malla.scale.set(0.5,0.5,0.5)
 this.merge(sphere.geometry, sphere.matrix);
