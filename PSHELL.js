@@ -78,7 +78,7 @@ var mallapiei =new THREE.Mesh( piei);
 var mallapied =new THREE.Mesh( pied);
 var mallojoi =new THREE.Mesh( ojoi);
 var mallojod =new THREE.Mesh( ojod); 
-var mallabot = new THREE.Mesh( bottom);
+//var mallabot = new THREE.Mesh( bottom);
 this.merge(sphere.geometry, sphere.matrix);
 this.merge(troncoMalla.geometry, troncoMalla.matrix);
 this.merge(mallojoi.geometry, mallojoi.matrix);
