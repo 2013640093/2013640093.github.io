@@ -48,7 +48,9 @@ mallabomba.translate(0,4,0);
 /*CONSTRUCTOR DE HONGO*/ 
 PROTOTIPO.Hongo = function(){
   THREE.Geometry.call( this );
-  var troncoForma = new THREE.CylinderGeometry(3, 6, 14);
+var geometry = new THREE.SphereGeometry( 10, 60, 60, Math.PI, Math.PI*2, 3*Math.PI/2);
+geometry.translate(0,5,0);
+var troncoForma = new THREE.CylinderGeometry(3, 6, 14);
 var troncoMalla = new THREE.Mesh(troncoForma);
 troncoMalla.position.set(0, 6, 0);
 var ojoi=new THREE.SphereGeometry(1,32,32);
@@ -71,6 +73,7 @@ figura2.lineTo(-6.2, -7.05);
 figura2.lineTo(-6, -7.05);
 figura2.lineTo(-6, -7);
 var piei = new THREE.ExtrudeGeometry( figura2, {amount: 0.75} );
+var sphere = new THREE.Mesh( geometry);
 var mallapiei =new THREE.Mesh( piei);
 var mallapied =new THREE.Mesh( pied);
 var mallojoi =new THREE.Mesh( ojoi);
