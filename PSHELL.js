@@ -494,7 +494,7 @@ function HADA(T, x, y ){
   this.position.z =5;
   this.actuator = new THREE.Mesh( new PROTOTIPO.Hada(), new THREE.MeshLambertMaterial( {map: textura} ) );
   this.actuator.scale.set(0.5, 0.5, 0.5 );
-  this.actuator.rotateX( Math.PI/2 );
+  //this.actuator.rotateX( Math.PI/2 );
    this.actuator.castShadow = true;
   this.add( this.actuator );
   document.addEventListener("keydown", movement, false);
@@ -512,7 +512,7 @@ function PINGUIN(T, x, y ){
   this.castShadow = true;
   this.position.x = x;
   this.position.y = y;
-  this.position.z = 0;
+  this.position.z = 10;
   this.actuator = new THREE.Mesh( new PROTOTIPO.Pinguin(), new THREE.MeshLambertMaterial( {map: textura} ) );
   this.actuator.scale.set(0.75, 0.75, 0.75 );
   this.actuator.rotateX( Math.PI/2 );
@@ -611,6 +611,8 @@ function setup(){
   environment = new Environment();
   environment.setMap( mapa );
   environment.setMapPiece( pieza );
+  
+  
   camara = new THREE.PerspectiveCamera(30, window.innerWidth/window.innerHeight, .7, 1000 );
   camara.position.z =150;
   camara.position.y =-500;
@@ -627,6 +629,8 @@ function setup(){
   luzPuntual.castShadow=true;
   environment.add( camara );
   environment.add( luzPuntual );
+  
+  
 }
 
 function SeleccionD(event){
