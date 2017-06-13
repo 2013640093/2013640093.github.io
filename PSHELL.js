@@ -55,8 +55,8 @@ var troncoMalla = new THREE.Mesh(troncoForma);
 troncoMalla.position.set(0, 6, 0);
 var ojoi=new THREE.SphereGeometry(1,32,32);
 ojoi.translate(-2.5,9,9);
-var bottom = new THREE.CylinderGeometry( 14, 14, 2.5, 32 );
-bottom.translate(0,-10,0)
+//var bottom = new THREE.CylinderGeometry( 14, 14, 2.5, 32 );
+//bottom.translate(0,-10,0)
 var ojod=new THREE.SphereGeometry(1,32,32);
 ojod.translate(2.5,9,9);
 var figura = new THREE.Shape();
@@ -85,7 +85,7 @@ this.merge(mallojoi.geometry, mallojoi.matrix);
 this.merge(mallojod.geometry, mallojod.matrix);
 this.merge(mallapied.geometry, mallapied.matrix);
 this.merge(mallapiei.geometry, mallapiei.matrix);
-this.merge(mallabot.geometry, mallabot.matrix);
+//this.merge(mallabot.geometry, mallabot.matrix);
 /*var escena = new THREE.Scene();
 mallahongoForma.scale.set(0.75,0.75,0.75);
 escena.add(mallahongoForma);*/
@@ -99,8 +99,8 @@ for ( var deg = 0; deg <= 180; deg += 6 ) {
     var point = new THREE.Vector2( ( 10*0.72 + 10*.08 * Math.cos( rad ) ) * Math.sin( rad ), - 10*Math.cos( rad ) ); // the "egg equation"
     points.push( point );}
 geometry = new THREE.LatheGeometry( points, 32 );
-var bottom = new THREE.CylinderGeometry( 14, 14, 2.5, 32 );
-bottom.translate(0,-10,0)
+//var bottom = new THREE.CylinderGeometry( 14, 14, 2.5, 32 );
+//bottom.translate(0,-10,0)
 var ojoi=new THREE.SphereGeometry(0.75,32,32);
 ojoi.translate(-1.5,7,5);
 var ojod=new THREE.SphereGeometry(0.75,32,32);
@@ -113,7 +113,7 @@ Ovo.position.set(0, 0, 0);
 this.merge(Ovo.geometry, Ovo.matrix);
 this.merge(mallojoi.geometry, mallojoi.matrix);
 this.merge(mallojod.geometry, mallojod.matrix);
-this.merge(mallabot.geometry, mallabot.matrix);
+//this.merge(mallabot.geometry, mallabot.matrix);
 var mallahuevo = new THREE.Mesh(this);
 mallahuevo.rotateY( Math.PI/8 );
 /*mallahuevo.scale.set(0.75,0.75,0.75);
@@ -123,8 +123,8 @@ escena.add(mallahuevo);*/
 PROTOTIPO.Hada = function(){  
 THREE.Geometry.call( this );
 var geometry = new THREE.SphereGeometry( 10, 32, 32 );
-var bottom = new THREE.CylinderGeometry( 28, 28, 2.5, 32 );
-bottom.translate(0,-10,0);
+//var bottom = new THREE.CylinderGeometry( 28, 28, 2.5, 32 );
+//bottom.translate(0,-10,0);
 var figura = new THREE.Shape();
 figura.moveTo(8,8);
 figura.lineTo(27.5,15);
@@ -148,7 +148,7 @@ malla.scale.set(0.5,0.5,0.5)
 this.merge(sphere.geometry, sphere.matrix);
 this.merge(malla.geometry, malla.matrix);
 this.merge(mallai.geometry, mallai.matrix);
-this.merge(mallabot.geometry, mallabot.matrix);
+//this.merge(mallabot.geometry, mallabot.matrix);
 var material3 = new THREE.MeshNormalMaterial();
 var mallahada = new THREE.Mesh(this);
 //mallahada.rotateY( Math.PI/8 );
@@ -165,8 +165,8 @@ for ( var deg = 0; deg <= 180; deg += 6 ) {
     var point = new THREE.Vector2( ( 10*0.72 + 10*.08 * Math.cos( rad ) ) * Math.sin( rad ), - 10*Math.cos( rad ) ); // the "egg equation"
     points.push( point );}
   geometry = new THREE.LatheGeometry( points, 32 ); 
-var bottom = new THREE.CylinderGeometry( 14, 14, 2.5, 32 );
-bottom.translate(0,-10,0) 
+//var bottom = new THREE.CylinderGeometry( 14, 14, 2.5, 32 );
+//bottom.translate(0,-10,0) 
 var ojoi=new THREE.SphereGeometry(0.75,32,32);
 ojoi.translate(-1.5,12,5);
 var ojod=new THREE.SphereGeometry(0.75,32,32);
@@ -208,7 +208,7 @@ var mallojod =new THREE.Mesh( ojod);
 var mallapiei =new THREE.Mesh( piei);
 var mallapied =new THREE.Mesh( pied);
 var mallapic = new THREE.Mesh( forma);
-var mallabot = new THREE.Mesh( bottom);
+//var mallabot = new THREE.Mesh( bottom);
 var Ovo = new THREE.Mesh( geometry);
 Ovo.position.set(0, 0, 0); 
   
@@ -441,13 +441,17 @@ Environment.prototype.setMapPiece = function( map ){
 function BOMBA(T, x, y ){
   Agent.call( this, x, y );
   var cargador = new THREE.TextureLoader();
+  this.T=T;
+  if(this.T===true)
+    textura = cargador.load( 'blu.png' );
+  else
+    textura=cargador.load('t3.jpg');
   this.castShadow = true;
   this.position.x = x;
   this.position.y = y;
   this.position.z = 5;
-  textura = cargador.load( 'blu.png' );
   this.actuator = new THREE.Mesh( new PROTOTIPO.Peon(), new THREE.MeshLambertMaterial( {map: textura} ) );
-  this.actuator.scale.set( 1, 1, 1 );
+  this.actuator.scale.set( 0.75, 0.75, 0.75 );
   this.actuator.rotateX( Math.PI/2 );
    this.actuator.castShadow = true;
   this.add( this.actuator );
@@ -487,7 +491,7 @@ function HADA(T, x, y ){
   this.castShadow = true;
   this.position.x = x;
   this.position.y = y;
-  this.position.z =10;
+  this.position.z =5;
   this.actuator = new THREE.Mesh( new PROTOTIPO.Hada(), new THREE.MeshLambertMaterial( {map: textura} ) );
   this.actuator.scale.set(0.5, 0.5, 0.5 );
   this.actuator.rotateX( Math.PI/2 );
@@ -508,7 +512,7 @@ function PINGUIN(T, x, y ){
   this.castShadow = true;
   this.position.x = x;
   this.position.y = y;
-  this.position.z = 10;
+  this.position.z = 0;
   this.actuator = new THREE.Mesh( new PROTOTIPO.Pinguin(), new THREE.MeshLambertMaterial( {map: textura} ) );
   this.actuator.scale.set(0.75, 0.75, 0.75 );
   this.actuator.rotateX( Math.PI/2 );
