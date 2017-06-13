@@ -311,7 +311,7 @@ PROTOTIPO.Zorro.prototype = new THREE.Geometry();
 /*CONSTRUCCIÓN DEL AGENTE*/
 function Agent( x=0, y=0 ){
   THREE.Object3
-  TREE.Object3D.call( this );
+  THREE.Object3D.call( this );
   this.position.x = x;
   this.position.y = y;
   }
