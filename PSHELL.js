@@ -395,9 +395,43 @@ Environment.prototype.setMap = function( map ){
 Environment.prototype.setMapPiece = function( map ){
   for( var i = 0; i < map.length; i++){
     for(var j = 0; j < map.length; j++){
-      if( map[i][j] === "p")
-        this.add( new BOMBA( -95+30*i, -95+30*j ) );
+      if( map[i][j] === "a"){
+        this.add( new BOMBA( true,-95+30*i, -95+30*j ) );
     }
+       if( map[i][j] === "A"){
+        this.add( new BOMBA( false,-95+30*i, -95+30*j ) );
+    }
+        if( map[i][j] === "h"){
+        this.add( new HONGO( true,-95+30*i, -95+30*j ) );
+    }
+       if( map[i][j] === "H"){
+        this.add( new HONGO( false,-95+30*i, -95+30*j ) );
+    }
+          if( map[i][j] === "f"){
+        this.add( new HADA( true,-95+30*i, -95+30*j ) );
+    }
+       if( map[i][j] === "F"){
+        this.add( new HADA( false,-95+30*i, -95+30*j ) );
+    }
+        if( map[i][j] === "e"){
+        this.add( new HUEVO( true,-95+30*i, -95+30*j ) );
+    }
+       if( map[i][j] === "E"){
+        this.add( new HUEVO( false,-95+30*i, -95+30*j ) );
+    }
+        if( map[i][j] === "p"){
+        this.add( new PINGUIN( true,-95+30*i, -95+30*j ) );
+    }
+       if( map[i][j] === "P"){
+        this.add( new PINGUIN( false,-95+30*i, -95+30*j ) );
+    }
+       if( map[i][j] === "z"){
+        this.add( new ZORRO( true,-95+30*i, -95+30*j ) );
+    }
+       if( map[i][j] === "Z"){
+        this.add( new ZORRO( false,-95+30*i, -95+30*j ) );
+    }
+   }
   }
 }
 /*FUNCIONES DE PIEZAS*/
@@ -408,7 +442,7 @@ function BOMBA(T, x, y ){
   this.position.x = x;
   this.position.y = y;
   this.position.z = 5;
-  textura = cargador.load( 'marmol_blanco.jpg' );
+  textura = cargador.load( 'blu.png' );
   this.actuator = new THREE.Mesh( new PROTOTIPO.Peon(), new THREE.MeshLambertMaterial( {map: textura} ) );
   this.actuator.scale.set( 1, 1, 1 );
   this.actuator.rotateX( Math.PI/2 );
@@ -421,15 +455,19 @@ function BOMBA(T, x, y ){
 function HONGO(T, x, y ){
   Agent.call( this, x, y );
   var cargador = new THREE.TextureLoader();
+  this.T=T;
+  if(this.T===true)
+    textura = cargador.load( 'blu.png' );
+  else
+    textura=cargador.load('t3.jpg');
   this.castShadow = true;
   this.position.x = x;
   this.position.y = y;
-  this.position.z = 5;
-  textura = cargador.load( 'marmol_blanco.jpg' );
+  this.position.z = 10;
   this.actuator = new THREE.Mesh( new PROTOTIPO.Hongo(), new THREE.MeshLambertMaterial( {map: textura} ) );
-  this.actuator.scale.set( 1, 1, 1 );
+  this.actuator.scale.set( 0.75, 0.75,0.75 );
   this.actuator.rotateX( Math.PI/2 );
-   this.actuator.castShadow = true;
+  this.actuator.castShadow = true;
   this.add( this.actuator );
   document.addEventListener("keydown", movement, false);
   }
@@ -438,13 +476,17 @@ function HONGO(T, x, y ){
 function HADA(T, x, y ){
   Agent.call( this, x, y );
   var cargador = new THREE.TextureLoader();
+  this.T=T;
+  if(this.T===true)
+    textura = cargador.load( 'blu.png' );
+  else
+    textura=cargador.load('t3.jpg');
   this.castShadow = true;
   this.position.x = x;
   this.position.y = y;
-  this.position.z = 5;
-  textura = cargador.load( 'marmol_blanco.jpg' );
+  this.position.z =10;
   this.actuator = new THREE.Mesh( new PROTOTIPO.Hada(), new THREE.MeshLambertMaterial( {map: textura} ) );
-  this.actuator.scale.set( 1, 1, 1 );
+  this.actuator.scale.set(0.5, 0.5, 0.5 );
   this.actuator.rotateX( Math.PI/2 );
    this.actuator.castShadow = true;
   this.add( this.actuator );
@@ -455,13 +497,17 @@ function HADA(T, x, y ){
 function PINGUIN(T, x, y ){
   Agent.call( this, x, y );
   var cargador = new THREE.TextureLoader();
+  this.T=T;
+  if(this.T===true)
+    textura = cargador.load( 'blu.png' );
+  else
+    textura=cargador.load('t3.jpg');
   this.castShadow = true;
   this.position.x = x;
   this.position.y = y;
-  this.position.z = 5;
-  textura = cargador.load( 'marmol_blanco.jpg' );
+  this.position.z = 10;
   this.actuator = new THREE.Mesh( new PROTOTIPO.Pinguin(), new THREE.MeshLambertMaterial( {map: textura} ) );
-  this.actuator.scale.set( 1, 1, 1 );
+  this.actuator.scale.set(0.75, 0.75, 0.75 );
   this.actuator.rotateX( Math.PI/2 );
    this.actuator.castShadow = true;
   this.add( this.actuator );
@@ -472,24 +518,44 @@ function PINGUIN(T, x, y ){
 function HUEVO(T, x, y ){
   Agent.call( this, x, y );
   var cargador = new THREE.TextureLoader();
+  this.T=T;
+  if(this.T===true)
+    textura = cargador.load( 'blu.png' );
+  else
+    textura=cargador.load('t3.jpg');
   this.castShadow = true;
   this.position.x = x;
   this.position.y = y;
-  this.position.z = 5;
-  textura = cargador.load( 'marmol_blanco.jpg' );
+  this.position.z = 10;
   this.actuator = new THREE.Mesh( new PROTOTIPO.Huevo(), new THREE.MeshLambertMaterial( {map: textura} ) );
+  this.actuator.scale.set( 0.75, 0.75, 0.75 );
+  this.actuator.rotateX( Math.PI/2 );
+  this.actuator.castShadow = true;
+  this.add( this.actuator );
+  document.addEventListener("keydown", movement, false);
+  }
+  HUEVO.prototype = new Agent();
+///////
+function ZORRO(T, x, y ){
+  Agent.call( this, x, y );
+  var cargador = new THREE.TextureLoader();
+  this.T=T;
+  if(this.T===true)
+    textura = cargador.load( 'blu.png' );
+  else
+    textura=cargador.load('t3.jpg');
+  this.castShadow = true;
+  this.position.x = x;
+  this.position.y = y;
+  this.position.z = 10;
+  this.actuator = new THREE.Mesh( new PROTOTIPO.Zorro(), new THREE.MeshLambertMaterial( {map: textura} ) );
   this.actuator.scale.set( 1, 1, 1 );
   this.actuator.rotateX( Math.PI/2 );
    this.actuator.castShadow = true;
   this.add( this.actuator );
   document.addEventListener("keydown", movement, false);
   }
-  HUEVO.prototype = new Agent();
-///////
-
-
-
-
+  ZORRO.prototype = new Agent();
 
 /*EVENTOS*/
 function movement(event) { 
@@ -525,14 +591,14 @@ function setup(){
   mapa[9] = "CCCCCCCCCC";
   var pieza = new Array();
   pieza[0] = "          ";
-  pieza[1] = " p p p p p";
-  pieza[2] = "  p p p p ";
-  pieza[3] = "          ";
+  pieza[1] = " fahafeee ";
+  pieza[2] = " ahzhaepe ";
+  pieza[3] = " h   heee ";
   pieza[4] = "          ";
   pieza[5] = "          ";
-  pieza[6] = "          ";
-  pieza[7] = "  p p p p ";
-  pieza[8] = " p p p p p";
+  pieza[6] = " EEEH   H ";
+  pieza[7] = " EPEAHZHA ";
+  pieza[8] = " EEEFAHAF ";
   pieza[9] = "          ";
   
   environment = new Environment();
