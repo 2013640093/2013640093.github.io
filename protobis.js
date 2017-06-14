@@ -615,11 +615,11 @@ function setup(){
   
   
 var relacionAspecto =window.innerWidth / window.innerHeight;
-var planoCercano =0.2;
+var planoCercano =0.5;
 var planoLejano =1000;
- var campoVision =50; //grados
+ var campoVision =40; //grados
 var camara = new THREE.PerspectiveCamera(campoVision,relacionAspecto,planoCercano,planoLejano);
-camara.position.x = 100;    
+//camara.position.x = 100;    
 camara.position.y = 200;
 camara.position.z = -300;   
 camara.lookAt(new THREE.Vector3(0,0,0));
