@@ -613,17 +613,17 @@ function setup(){
   environment.setMapPiece( pieza );
   
   
-  camara = new THREE.PerspectiveCamera(30, window.innerWidth/window.innerHeight, .7, 1000 );
-  camara.position.z =150;
-  camara.position.y =-500;
-  camara.lookAt( new THREE.Vector3( 0, 0, 0 ) );
+  camara = new THREE.PerspectiveCamera(30, window.innerWidth/window.innerHeight, .5, 1000 );
+ // camara.position.z =150;
+ // camara.position.y =-500;
+ 
   /////////////////CAMARA/////////////////
  /*var campoVision=30;
 var relacionAspecto =window.innerWidth / window.innerHeight;
 var planoCercano =0.2;
 var planoLejano =1000;
 var camara = new THREE.PerspectiveCamera(campoVision,relacionAspecto,planoCercano,planoLejano);*/
-//camara.position.x = 300;    
+camara.position.x = 300;    
 camara.position.y = -500;
 camara.position.z = 300;   
 camara.lookAt(new THREE.Vector3(0,0,0));
