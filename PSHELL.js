@@ -614,7 +614,7 @@ function setup(){
   
   
   camara = new THREE.PerspectiveCamera(30, (window.innerWidth/window.innerHeight),0.7, 1000 );
- camara.position.z =1500;
+ camara.position.z =150;
   camara.position.y =-500;
  
   /////////////////CAMARA/////////////////
