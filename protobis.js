@@ -614,7 +614,7 @@ function setup(){
   
   
   
-var relacionAspecto =window.innerWidth / window.innerHeight;
+/*var relacionAspecto =window.innerWidth / window.innerHeight;
 var planoCercano =0.5;
 var planoLejano =1000;
  var campoVision =40; //grados
@@ -622,12 +622,12 @@ var camara = new THREE.PerspectiveCamera(campoVision,relacionAspecto,planoCercan
 //camara.position.x = 100;    
 camara.position.y = 200;
 camara.position.z = -300;   
-camara.lookAt(new THREE.Vector3(0,0,0));
+camara.lookAt(new THREE.Vector3(0,0,0));*/
   
   
-  /*camara = new THREE.PerspectiveCamera(30, (window.innerWidth/window.innerHeight),0.7, 1000 );
- camara.position.z =1500;
-  camara.position.y =-500;*/
+  camara = new THREE.PerspectiveCamera(50, (window.innerWidth/window.innerHeight),0.2, 1000 );
+ camara.position.z =300;
+  camara.position.y =200;
  
   /////////////////CAMARA/////////////////
 /* var campoVision=30;
@@ -638,11 +638,11 @@ var camara = new THREE.PerspectiveCamera(campoVision,relacionAspecto,planoCercan
 //camara.position.x = 300;    
 ////camara.position.y = -500;
 //camara.position.z = 100;   
-//camara.lookAt(new THREE.Vector3(0,0,0));
+camara.lookAt(new THREE.Vector3(0,0,0));
 ///////////////////render///////////////////////
 renderer = new THREE.WebGLRenderer();
-//renderer.setSize( window.innerHeight*.95, window.innerHeight*.95 );
-  renderer.setSize( window.innerHeight, window.innerHeight);
+renderer.setSize( window.innerHeight*.95, window.innerHeight*.95 );
+//  renderer.setSize( window.innerHeight, window.innerHeight);
   renderer.shadowMap.enabled=true;
   document.body.appendChild( renderer.domElement );
 ///////////////////////LUZ
