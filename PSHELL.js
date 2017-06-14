@@ -617,20 +617,23 @@ function setup(){
   camara.position.z =150;
   camara.position.y =-500;
   camara.lookAt( new THREE.Vector3( 0, 0, 0 ) );*/
-  var campoVision=30;
+  /////////////////CAMARA/////////////////
+ var campoVision=30;
 var relacionAspecto =window.innerWidth / window.innerHeight;
 var planoCercano =0.2;
 var planoLejano =1000;
 var camara = new THREE.PerspectiveCamera(campoVision,relacionAspecto,planoCercano,planoLejano);
-camara.position.x = 300;    
-camara.position.y = 500;
+//camara.position.x = 300;    
+camara.position.y = -500;
 camara.position.z = 300;   
 camara.lookAt(new THREE.Vector3(0,0,0));
+///////////////////render///////////////////////
 renderer = new THREE.WebGLRenderer();
-  //renderer.setSize( window.innerHeight*.95, window.innerHeight*.95 );
+//renderer.setSize( window.innerHeight*.95, window.innerHeight*.95 );
   renderer.setSize( window.innerHeight, window.innerHeight);
   renderer.shadowMap.enabled=true;
   document.body.appendChild( renderer.domElement );
+///////////////////////LUZ
   luzPuntual=new THREE.PointLight(0xFFFFFF);
   luzPuntual.position.x = 350;
   luzPuntual.position.y = -350;
