@@ -617,6 +617,7 @@ function setup(){
   camara.position.z =150;
   camara.position.y =-500;
   camara.lookAt( new THREE.Vector3( 0, 0, 0 ) );*/
+  var campoVision=30;
 var relacionAspecto =window.innerWidth / window.innerHeight;
 var planoCercano =0.2;
 var planoLejano =1000;
