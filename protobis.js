@@ -627,7 +627,7 @@ camara.lookAt(new THREE.Vector3(0,0,0));*/
   
   camara = new THREE.PerspectiveCamera(30, (window.innerWidth/window.innerHeight),0.2, 1000 );
  camara.position.z =300;
-  camara.position.y =200;
+  camara.position.y =-200;
  
   /////////////////CAMARA/////////////////
 /* var campoVision=30;
