@@ -2,7 +2,7 @@ THREE.ImageUtils.crossOrigin = '';
  var textura =THREE.ImageUtils.loadTexture('blu.png');
 var material = new THREE.MeshBasicMaterial({map: textura});
 
-var geometry = new THREE.TorusGeometry( 10, 2, 16, 100 );
+var geometry = new THREE.TorusGeometry( 7, 1, 16, 100 );
 var torus = new THREE.Mesh( geometry, material );
 
 
@@ -11,7 +11,7 @@ escena.add(torus);
 
 
 var camara = new THREE.PerspectiveCamera();
-camara.position.z = 50;
+camara.position.z = 30;
 
 
 var renderizador = new THREE.WebGLRenderer();
