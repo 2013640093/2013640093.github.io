@@ -1,5 +1,5 @@
 /////////////////GEOMETRIAS//////////////////////
-//var PROTOTIPO = new Object();
+var PROTOTIPO = new Object();
 /*CONSTRUCTOR DE BOMBA*/
 PROTOTIPO.Peon = function(){
 //Peon = function(){
