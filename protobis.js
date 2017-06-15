@@ -606,7 +606,6 @@ function BOMBA(T, x, y ){
   if(this.T===true)
     textura = cargador.load( 'blu.png' );
   else
-    this.actuator.rotateX( Math.PI);
     textura=cargador.load('t3.jpg');
   this.castShadow = true;
   this.position.x = x;
@@ -614,7 +613,8 @@ function BOMBA(T, x, y ){
   this.position.z = 5;
   this.actuator = new THREE.Mesh( new PROTOTIPO.Peon(), new THREE.MeshLambertMaterial( {map: textura} ) );
   this.actuator.scale.set( 0.75, 0.75, 0.75 );
-   this.actuator.castShadow = true;
+  this.actuator.castShadow = true;
+  this.actuator.rotateX( Math.PI/2);
   this.add( this.actuator );
   document.addEventListener("keydown", movement, false);
   }
@@ -738,7 +738,6 @@ function HONGO(T, x, y ){
   if(this.T===true)
     textura = cargador.load( 'blu.png' );
   else
-    this.actuator.rotateX( Math.PI);
     textura=cargador.load('t3.jpg');
   this.castShadow = true;
   this.position.x = x;
@@ -747,6 +746,7 @@ function HONGO(T, x, y ){
   this.actuator = new THREE.Mesh( new PROTOTIPO.Hongo(), new THREE.MeshLambertMaterial( {map: textura} ) );
   this.actuator.scale.set( 0.75, 0.75,0.75 );
   this.actuator.castShadow = true;
+  this.actuator.rotateX( Math.PI);
   this.add( this.actuator );
   document.addEventListener("keydown", movement, false);
   }
@@ -1006,7 +1006,6 @@ function PINGUIN(T, x, y ){
   if(this.T===true)
     textura = cargador.load( 'blu.png' );
   else
-      this.actuator.rotateX( Math.PI/2 );
     textura=cargador.load('t3.jpg');
   this.castShadow = true;
   this.position.x = x;
@@ -1014,7 +1013,8 @@ function PINGUIN(T, x, y ){
   this.position.z = 10;
   this.actuator = new THREE.Mesh( new PROTOTIPO.Pinguin(), new THREE.MeshLambertMaterial( {map: textura} ) );
   this.actuator.scale.set(0.75, 0.75, 0.75 );
-   this.actuator.castShadow = true;
+  this.actuator.castShadow = true;
+  this.actuator.rotateX( Math.PI/2 );
   this.add( this.actuator );
   document.addEventListener("keydown", movement, false);
   }
@@ -1278,7 +1278,6 @@ function ZORRO(T, x, y ){
   if(this.T===true)
     textura = cargador.load( 'blu.png' );
   else
-    this.actuator.rotateX( Math.PI/2 );
     textura=cargador.load('t3.jpg');
   this.castShadow = true;
   this.position.x = x;
@@ -1286,7 +1285,7 @@ function ZORRO(T, x, y ){
   this.position.z = 10;
   this.actuator = new THREE.Mesh( new PROTOTIPO.Zorro(), new THREE.MeshLambertMaterial( {map: textura} ) );
   this.actuator.scale.set( 1, 1, 1 );
-  
+   this.actuator.rotateX( Math.PI/2 );
    this.actuator.castShadow = true;
   this.add( this.actuator );
   document.addEventListener("keydown", movement, false);
