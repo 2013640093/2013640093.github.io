@@ -544,13 +544,13 @@ Environment.prototype.setMap = function( map ){
   for ( var i = 0; i < map.length; i++ ){
     for ( var j = 0; j < map.length; j++ ){
       if ( map[i][j] === "B" )
-        sTC=1;
+        //sTC=1;
         this.add( new CasillaB( 30, -95+30*i, -95+30*j ) );
       else if ( map[i][j] === "N" )
-        sTC=2;
+        //sTC=2;
         this.add( new CasillaN( 30, -95+30*i, -95+30*j ) );
       else if ( map[i][j] === "C" )
-        sTC=3;
+        //sTC=3;
         this.add( new Contorno( 30, -95+30*i, -95+30*j ) );
       }
    }
