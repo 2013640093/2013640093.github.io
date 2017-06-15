@@ -1020,10 +1020,6 @@ function PINGUIN(T, x, y ){
   }
   PINGUIN.prototype = new Agent();
 
-
-
-
-
 PINGUIN.prototype.sense=function(environment)
   {
   if (this.T === true){
@@ -1147,7 +1143,6 @@ function HUEVO(T, x, y ){
   if(this.T===true)
     textura = cargador.load( 'blu.png' );
   else
-    this.actuator.rotateX( Math.PI/2 );
     textura=cargador.load('t3.jpg');
   this.castShadow = true;
   this.position.x = x;
@@ -1155,6 +1150,7 @@ function HUEVO(T, x, y ){
   this.position.z = 10;
   this.actuator = new THREE.Mesh( new PROTOTIPO.Huevo(), new THREE.MeshLambertMaterial( {map: textura} ) );
   this.actuator.scale.set( 0.75, 0.75, 0.75 );
+  this.actuator.rotateX( Math.PI/2 );
   this.actuator.castShadow = true;
   this.add( this.actuator );
   document.addEventListener("keydown", movement, false);
