@@ -7,7 +7,7 @@ var torus = new THREE.Mesh( geometry, material );
 
 
 var escena = new THREE.Scene(); 
-torus.rotation.x = 176.5;
+torus.rotation.x = 177.5;
 escena.add(torus);
 
 
