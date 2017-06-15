@@ -6,8 +6,10 @@ var geometry = new THREE.TorusGeometry( 7, 1, 16, 100 );
 var torus = new THREE.Mesh( geometry, material );
 
 
-var escena = new THREE.Scene();                        
+var escena = new THREE.Scene(); 
+torus.rotation.x = 180;
 escena.add(torus);
+
 
 
 var camara = new THREE.PerspectiveCamera();
@@ -25,7 +27,7 @@ function loop()
 requestAnimationFrame(loop);
 
 
-torus.rotation.x += 0.00;
+//torus.rotation.x += 0.00;
 
 torus.rotation.y += 0.00;
 
