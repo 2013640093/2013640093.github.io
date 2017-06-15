@@ -1802,7 +1802,7 @@ function loop(){
       break;
     }
   }   
-  renderizador.render(environment,camara);
+  renderer.render(environment,camara);
  // environment.act();
  // renderer.render( environment, camara );
   }
