@@ -748,7 +748,7 @@ function HONGO(T, x, y ){
   this.actuator = new THREE.Mesh( new PROTOTIPO.Hongo(), new THREE.MeshLambertMaterial( {map: textura} ) );
   this.actuator.scale.set( 0.75, 0.75,0.75 );
   this.actuator.castShadow = true;
-  this.actuator.rotateX( Math.PI);
+  this.actuator.rotateX( Math.PI/2);
   this.add( this.actuator );
   //document.addEventListener("keydown", movement, false);
   }
