@@ -738,7 +738,7 @@ function HONGO(T, x, y ){
   if(this.T===true)
     textura = cargador.load( 'blu.png' );
   else
-    this.actuator.rotateX( Math.PI/2 );
+    this.actuator.rotateX( Math.PI);
     textura=cargador.load('t3.jpg');
   this.castShadow = true;
   this.position.x = x;
@@ -862,17 +862,13 @@ HONGO.prototype.plan=function(environment)
   }
 };
 
-
-
-
-
 ////////
 function HADA(T, x, y ){
   Agent.call( this, x, y );
   var cargador = new THREE.TextureLoader();
   this.T=T;
   if(this.T===true)
-    this.actuator.rotateX( Math.PI/2 );
+    //this.actuator.rotateX( Math.PI/2 );
     textura = cargador.load( 'blu.png' );
   else
     //this.actuator.rotateX( Math.PI/2 );
@@ -883,8 +879,7 @@ function HADA(T, x, y ){
   this.position.z =5;
   this.actuator = new THREE.Mesh( new PROTOTIPO.Hada(), new THREE.MeshLambertMaterial( {map: textura} ) );
   this.actuator.scale.set(0.5, 0.5, 0.5 );
-  
-   this.actuator.castShadow = true;
+  this.actuator.castShadow = true;
   this.add( this.actuator );
   document.addEventListener("keydown", movement, false);
   }
