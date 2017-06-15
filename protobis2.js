@@ -660,7 +660,8 @@ renderer.setSize( window.innerHeight*.95, window.innerHeight*.95 );
 
 function SeleccionD(event){
   event.preventDefault();
-  var mouse3D=new THREE.Vector3((event.clientX/window.innerWidth)*2-1,-(event.clientY/window.innerHeight)*2+1,0);     
+  //var mouse3D=new THREE.Vector3((event.clientX/window.innerWidth)*2-1,-(event.clientY/window.innerHeight)*2+1,0);   
+  var mouse3D=new THREE.Vector3((event.clientX/window.innerWidth),-(event.clientY/window.innerHeight),0);   
   var raycaster=new THREE.Raycaster();                                        
   raycaster.setFromCamera(mouse3D,camara);
   seleccion=raycaster.intersectObjects(environment.children,true);
