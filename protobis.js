@@ -611,12 +611,13 @@ function BOMBA(T, x, y ){
   this.position.x = x;
   this.position.y = y;
   this.position.z = 5;
+   this.sensor=new Sensor();
   this.actuator = new THREE.Mesh( new PROTOTIPO.Peon(), new THREE.MeshLambertMaterial( {map: textura} ) );
   this.actuator.scale.set( 0.75, 0.75, 0.75 );
   this.actuator.castShadow = true;
   this.actuator.rotateX( Math.PI/2);
   this.add( this.actuator );
-  document.addEventListener("keydown", movement, false);
+  //document.addEventListener("keydown", movement, false);
   }
 BOMBA.prototype = new Agent();
 
@@ -743,12 +744,13 @@ function HONGO(T, x, y ){
   this.position.x = x;
   this.position.y = y;
   this.position.z = 10;
+   this.sensor=new Sensor();
   this.actuator = new THREE.Mesh( new PROTOTIPO.Hongo(), new THREE.MeshLambertMaterial( {map: textura} ) );
   this.actuator.scale.set( 0.75, 0.75,0.75 );
   this.actuator.castShadow = true;
   this.actuator.rotateX( Math.PI);
   this.add( this.actuator );
-  document.addEventListener("keydown", movement, false);
+  //document.addEventListener("keydown", movement, false);
   }
   HONGO.prototype = new Agent();
 
@@ -877,11 +879,12 @@ function HADA(T, x, y ){
   this.position.x = x;
   this.position.y = y;
   this.position.z =5;
+   this.sensor=new Sensor();
   this.actuator = new THREE.Mesh( new PROTOTIPO.Hada(), new THREE.MeshLambertMaterial( {map: textura} ) );
   this.actuator.scale.set(0.5, 0.5, 0.5 );
   this.actuator.castShadow = true;
   this.add( this.actuator );
-  document.addEventListener("keydown", movement, false);
+  //document.addEventListener("keydown", movement, false);
   }
   HADA.prototype = new Agent();
 
@@ -1011,12 +1014,13 @@ function PINGUIN(T, x, y ){
   this.position.x = x;
   this.position.y = y;
   this.position.z = 10;
+   this.sensor=new Sensor();
   this.actuator = new THREE.Mesh( new PROTOTIPO.Pinguin(), new THREE.MeshLambertMaterial( {map: textura} ) );
   this.actuator.scale.set(0.75, 0.75, 0.75 );
   this.actuator.castShadow = true;
   this.actuator.rotateX( Math.PI/2 );
   this.add( this.actuator );
-  document.addEventListener("keydown", movement, false);
+  //document.addEventListener("keydown", movement, false);
   }
   PINGUIN.prototype = new Agent();
 
@@ -1148,12 +1152,13 @@ function HUEVO(T, x, y ){
   this.position.x = x;
   this.position.y = y;
   this.position.z = 10;
+   this.sensor=new Sensor();
   this.actuator = new THREE.Mesh( new PROTOTIPO.Huevo(), new THREE.MeshLambertMaterial( {map: textura} ) );
   this.actuator.scale.set( 0.75, 0.75, 0.75 );
   this.actuator.rotateX( Math.PI/2 );
   this.actuator.castShadow = true;
   this.add( this.actuator );
-  document.addEventListener("keydown", movement, false);
+ // document.addEventListener("keydown", movement, false);
   }
   HUEVO.prototype = new Agent();
 
@@ -1283,12 +1288,13 @@ function ZORRO(T, x, y ){
   this.position.x = x;
   this.position.y = y;
   this.position.z = 10;
+   this.sensor=new Sensor();
   this.actuator = new THREE.Mesh( new PROTOTIPO.Zorro(), new THREE.MeshLambertMaterial( {map: textura} ) );
   this.actuator.scale.set( 1, 1, 1 );
    this.actuator.rotateX( Math.PI/2 );
    this.actuator.castShadow = true;
   this.add( this.actuator );
-  document.addEventListener("keydown", movement, false);
+  //document.addEventListener("keydown", movement, false);
   }
   ZORRO.prototype = new Agent();
 
