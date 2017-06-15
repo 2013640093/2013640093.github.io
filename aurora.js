@@ -25,9 +25,9 @@ function loop()
 requestAnimationFrame(loop);
 
 
-torus.rotation.x += 0.01;
+torus.rotation.x += 0.00;
 
-torus.rotation.y += 0.01;
+torus.rotation.y += 0.00;
 
 
 renderizador.render(escena, camara);
